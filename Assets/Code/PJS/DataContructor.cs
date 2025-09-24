@@ -3,10 +3,7 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.SceneManagement;
 using System;
-using System.Linq;
 using System.Text;
-using NUnit.Framework;
-using Unity.Collections.LowLevel.Unsafe;
 using CSI._01_Script.System;
 public class DataContructor : MonoSingleton<DataContructor>
 {
@@ -127,6 +124,18 @@ public class DataContructor : MonoSingleton<DataContructor>
             dataTypeDict.Add(t, new Dictionary<string, object>());
         }    
         dataTypeDict[t].Add(data.Name, data);
+    }
+
+    public void SetData<T>(T data) where T : ISerializabelDatas
+    {
+        Type t = typeof(T);
+
+        if (!dataTypeDict.ContainsKey(t))
+        {
+            AddData(data);
+            return;
+        }
+        dataTypeDict[t][data.Name] = data;
     }
 
     public T GetData<T>(string key) where T : ISerializabelDatas

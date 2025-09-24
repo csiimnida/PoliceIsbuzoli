@@ -1,6 +1,10 @@
 using System;
 using UnityEngine;
 
+/// <summary>
+/// Use this interface for saving data.
+/// Both classes and structs can implement it.
+/// </summary>
 public interface ISerializabelDatas
 {
     public string Name { get; set; }
