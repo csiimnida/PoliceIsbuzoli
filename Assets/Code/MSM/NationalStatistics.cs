@@ -6,6 +6,7 @@ namespace Code.MSM
 {
     public class NationalStatistics : MonoBehaviour
     {
+        [field:SerializeField] public string NationalName { get; private set; }
         //전염도 ->  높을수록 사람들에게 퍼질 확률 증가 (x / 5)%
         //확산시간 -> 작을수록 더 빨리 퍼짐 (x)초
         //인구 밀집도 -> 높을수록 많은 사람 사용함 (x * x)명 
