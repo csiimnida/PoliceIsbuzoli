@@ -1,9 +1,9 @@
 using System.Reflection;
-using Plugins.ScriptFinder.RunTime.Attribute;
+using MoonLib.ScriptFinder.RunTime.Attribute;
 using UnityEditor;
 using UnityEngine;
 
-namespace Plugins.ScriptFinder.Editor.Attribute
+namespace MoonLib.ScriptFinder.Editor.Attribute
 {
     [CustomPropertyDrawer(typeof(InfoBoxAttribute))]
     public class InfoBoxDrawer : PropertyDrawer

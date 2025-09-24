@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace Plugins.ScriptFinder.RunTime.Attribute
+namespace MoonLib.ScriptFinder.RunTime.Attribute
 {
     [AttributeUsage(AttributeTargets.Field, AllowMultiple = true, Inherited = true)]
     public class InfoBoxAttribute : PropertyAttribute

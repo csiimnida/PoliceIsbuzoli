@@ -1,10 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Plugins.ScriptFinder.RunTime.Finder
+namespace MoonLib.ScriptFinder.RunTime.Finder
 {
     public enum FinderType
     {

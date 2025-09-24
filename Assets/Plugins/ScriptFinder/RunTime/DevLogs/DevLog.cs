@@ -1,7 +1,7 @@
 using System.Diagnostics;
 using Debug = UnityEngine.Debug;
 
-namespace Plugins.ScriptFinder.RunTime.DevLogs
+namespace MoonLib.ScriptFinder.RunTime.DevLogs
 {
     public static class DevLog
     {

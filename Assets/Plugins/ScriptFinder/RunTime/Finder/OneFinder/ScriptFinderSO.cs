@@ -1,8 +1,7 @@
-using Plugins.ScriptFinder.RunTime.DevLogs;
-using Plugins.ScriptFinder.RunTime.Serializable;
+using MoonLib.ScriptFinder.RunTime.DevLogs;
 using UnityEngine;
 
-namespace Plugins.ScriptFinder.RunTime.Finder.OneFinder
+namespace MoonLib.ScriptFinder.RunTime.Finder.OneFinder
 {
     [CreateAssetMenu(fileName = "ScriptFinder",menuName = "ScriptFinder/Normal", order = 0)]
     public class ScriptFinderSO : ScriptOneFinderBase

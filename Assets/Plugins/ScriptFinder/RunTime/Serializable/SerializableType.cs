@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Plugins.ScriptFinder.RunTime.Serializable
+namespace MoonLib.ScriptFinder.RunTime.Serializable
 {
     [Serializable]
     public class SerializableType : ISerializationCallbackReceiver, IEquatable<SerializableType>
