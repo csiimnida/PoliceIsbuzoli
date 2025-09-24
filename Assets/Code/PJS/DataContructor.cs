@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using NUnit.Framework;
 using Unity.Collections.LowLevel.Unsafe;
-public class DataContructor : MonoBehaviour
+using CSI._01_Script.System;
+public class DataContructor : MonoSingleton<DataContructor>
 {
     private const string fileName = "Stat.txt";
     public Dictionary<Type, Dictionary<string, object>> dataTypeDict = new();
@@ -27,9 +28,9 @@ public class DataContructor : MonoBehaviour
     }
 
     [ContextMenu("saveTest")]
-    private void HandleSave(Scene scene)
+    public void HandleSave(Scene scene)
     {
-        string path = Application.dataPath + "/" + fileName;
+        string path = Application.dataPath + "/Resources/" + fileName;
         using (writer = new StreamWriter(path, false, Encoding.UTF8))
         {
             foreach(var kvp in dataTypeDict)
@@ -117,7 +118,7 @@ public class DataContructor : MonoBehaviour
         }
     }
 
-    public void AddData<T>(string name, T data) where T : struct
+    public void AddData<T>(T data) where T : ISerializabelDatas
     {
         Type t = typeof(T);
 
@@ -125,10 +126,10 @@ public class DataContructor : MonoBehaviour
         {
             dataTypeDict.Add(t, new Dictionary<string, object>());
         }    
-        dataTypeDict[t].Add(name, data);
+        dataTypeDict[t].Add(data.Name, data);
     }
 
-    public T GetData<T>(string key) where T : struct
+    public T GetData<T>(string key) where T : ISerializabelDatas
     {
         Type t = typeof(T);
         if(dataTypeDict.TryGetValue(t, out var dict))
