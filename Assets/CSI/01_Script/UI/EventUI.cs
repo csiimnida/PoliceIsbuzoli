@@ -118,6 +118,7 @@ namespace CSI._01_Script.UI
                 return;
             }
             KillTweens();
+            Time.timeScale = 1;
 
             if (canvasGroup != null)
             {
@@ -143,7 +144,7 @@ namespace CSI._01_Script.UI
             title?.SetText(titleText);
             text?.SetText(textText);
             if (this.image != null) this.image.sprite = image;
-
+            Time.timeScale = 0;
             // Reset listeners to avoid stacking
             okBt.onClick.RemoveAllListeners();
             okBt.onClick.AddListener(() =>
