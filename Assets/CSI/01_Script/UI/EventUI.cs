@@ -170,7 +170,7 @@ namespace CSI._01_Script.UI
 
             ShowAnimated();
         }
-        private void Update(){
+        /*private void Update(){
             if (Keyboard.current.yKey.wasPressedThisFrame)
             {
                 ShowEvent("1Ti","123",null, () => { });
@@ -181,7 +181,7 @@ namespace CSI._01_Script.UI
             {
                 HideAnimated(() => { });
             }
-        }
+        }*/
     }
 
 }
