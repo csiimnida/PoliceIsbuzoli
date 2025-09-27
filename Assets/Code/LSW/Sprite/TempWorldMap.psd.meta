@@ -1,0 +1,650 @@
+fileFormatVersion: 2
+guid: af7dd4ba0fe94d44bb385896d57d2597
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6277746759663612492
+    second: TempWorldMap_0
+  - first:
+      213: 6672647751727863397
+    second: TempWorldMap_1
+  - first:
+      213: 3096958416273837865
+    second: TempWorldMap_2
+  - first:
+      213: 9147101067449999053
+    second: TempWorldMap_3
+  - first:
+      213: -3002406329010931975
+    second: TempWorldMap_4
+  - first:
+      213: 7274091608846403345
+    second: TempWorldMap_5
+  - first:
+      213: 8628613575799374162
+    second: TempWorldMap_6
+  - first:
+      213: 3570709194557578103
+    second: TempWorldMap_7
+  - first:
+      213: -8219064378993166294
+    second: TempWorldMap_8
+  - first:
+      213: 8733808603662779396
+    second: TempWorldMap_9
+  - first:
+      213: 643512933286814672
+    second: TempWorldMap_10
+  - first:
+      213: 3192791964309642437
+    second: TempWorldMap_11
+  - first:
+      213: 6020623343020222986
+    second: TempWorldMap_12
+  - first:
+      213: 7071833343568622565
+    second: TempWorldMap_13
+  - first:
+      213: 1078823924711118625
+    second: TempWorldMap_14
+  - first:
+      213: 601310837034863939
+    second: TempWorldMap_15
+  - first:
+      213: -8937546891784333070
+    second: TempWorldMap_16
+  - first:
+      213: -5853840431832043929
+    second: TempWorldMap_17
+  - first:
+      213: 5838779333617630438
+    second: TempWorldMap_18
+  - first:
+      213: -2848118795490464283
+    second: TempWorldMap_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TempWorldMap_0
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 401
+        width: 41
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bd04604596f0e8a0800000000000000
+      internalID: -6277746759663612492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_1
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 420
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5665c09e6c10a9c50800000000000000
+      internalID: 6672647751727863397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_2
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 420
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f882e654b9afa20800000000000000
+      internalID: 3096958416273837865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_3
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 422
+        width: 16
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dce14f915f701fe70800000000000000
+      internalID: 9147101067449999053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_4
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 413
+        width: 26
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f63be7e95f4556d0800000000000000
+      internalID: -3002406329010931975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_5
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 407
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11780f847c3c2f460800000000000000
+      internalID: 7274091608846403345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_6
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 392
+        width: 87
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25182a1b45efeb770800000000000000
+      internalID: 8628613575799374162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_7
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 334
+        width: 145
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77b53d11815bd8130800000000000000
+      internalID: 3570709194557578103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_8
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 87
+        width: 492
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28bb086e7400fd80800000000000000
+      internalID: -8219064378993166294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_9
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 409
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404029db6a8b43970800000000000000
+      internalID: 8733808603662779396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_10
+      rect:
+        serializedVersion: 2
+        x: 627
+        y: 392
+        width: 48
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d32ee47a973ee800800000000000000
+      internalID: 643512933286814672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_11
+      rect:
+        serializedVersion: 2
+        x: 646
+        y: 406
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ccd56a10631f4c20800000000000000
+      internalID: 3192791964309642437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_12
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 405
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a2527280d8d8350800000000000000
+      internalID: 6020623343020222986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_13
+      rect:
+        serializedVersion: 2
+        x: 685
+        y: 406
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e3bb2235f2342260800000000000000
+      internalID: 7071833343568622565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_14
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 27
+        width: 316
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1275997c4a0c8fe00800000000000000
+      internalID: 1078823924711118625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_15
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 394
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34d4e093509485800800000000000000
+      internalID: 601310837034863939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_16
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 76
+        width: 97
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f85ccf747477f380800000000000000
+      internalID: -8937546891784333070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_17
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 68
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ee4d8642bf2cea0800000000000000
+      internalID: -5853840431832043929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_18
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 62
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ecbb266ed2870150800000000000000
+      internalID: 5838779333617630438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TempWorldMap_19
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 54
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed6da4ab037978d0800000000000000
+      internalID: -2848118795490464283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      TempWorldMap_0: -6277746759663612492
+      TempWorldMap_1: 6672647751727863397
+      TempWorldMap_10: 643512933286814672
+      TempWorldMap_11: 3192791964309642437
+      TempWorldMap_12: 6020623343020222986
+      TempWorldMap_13: 7071833343568622565
+      TempWorldMap_14: 1078823924711118625
+      TempWorldMap_15: 601310837034863939
+      TempWorldMap_16: -8937546891784333070
+      TempWorldMap_17: -5853840431832043929
+      TempWorldMap_18: 5838779333617630438
+      TempWorldMap_19: -2848118795490464283
+      TempWorldMap_2: 3096958416273837865
+      TempWorldMap_3: 9147101067449999053
+      TempWorldMap_4: -3002406329010931975
+      TempWorldMap_5: 7274091608846403345
+      TempWorldMap_6: 8628613575799374162
+      TempWorldMap_7: 3570709194557578103
+      TempWorldMap_8: -8219064378993166294
+      TempWorldMap_9: 8733808603662779396
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
