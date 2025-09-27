@@ -28,7 +28,7 @@ namespace CSI._01_Script.UI
         private Tween _inTween;
         private Tween _outTween;
 
-        private void Awake()
+         private void Awake()
         {
             EnsureCanvasGroup();
             HideImmediate();
@@ -100,6 +100,7 @@ namespace CSI._01_Script.UI
             _inTween = DOTween.Sequence()
                 .Join(scaleTween)
                 .Join(alphaTween)
+                .SetUpdate(true)
                 .OnComplete(() =>
                 {
                     if (canvasGroup != null)
@@ -132,6 +133,7 @@ namespace CSI._01_Script.UI
             _outTween = DOTween.Sequence()
                 .Join(scaleTween)
                 .Join(alphaTween)
+                .SetUpdate(true)
                 .OnComplete(() =>
                 {
                     obj.gameObject.SetActive(false);
@@ -184,5 +186,4 @@ namespace CSI._01_Script.UI
             }
         }*/
     }
-
 }

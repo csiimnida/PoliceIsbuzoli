@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      CountryState_koreas_4-5_0: 5265193015600968795
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

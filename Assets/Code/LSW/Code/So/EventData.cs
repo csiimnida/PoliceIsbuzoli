@@ -9,6 +9,5 @@ namespace Code.LSW.Code.So
         public string titleText;
         public string textText;
         public Sprite image;
-        public Action ok;
     }
 }
