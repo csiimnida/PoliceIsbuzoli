@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using Random = UnityEngine.Random;
 
 namespace Code.MSM
@@ -15,12 +16,16 @@ namespace Code.MSM
         private float _spreadTime;
         private float _populationDensity;
         private float _stealth;
+        
+        public UnityEvent<int,int> totalAndCaughtPeopleEvent;
 
         public float PopulationDensity => _populationDensity * _populationDensity;
         
         private int _infectedPeople;
         
         private int _totalPeople;
+        
+        private int _totalCaughtPeople = 0;
 
         private float _timer= 0f;
 
@@ -30,6 +35,13 @@ namespace Code.MSM
             if (_timer >= _spreadTime)
             {
                 _timer = 0f;
+                
+                NationalData nationalData = DataContructor.Instance.GetData<NationalData>(NationalName);
+                _infectivity = nationalData.Infectivity;
+                _spreadTime = nationalData.SpreadTime;
+                _populationDensity = nationalData.PopulationDensity;
+                _stealth = nationalData.Stealth;
+                
                 float infectivityPercent = Mathf.Min(Random.Range(_infectivity / 500, 1), 1);//전염 확률 계산
                 int temp = _infectedPeople;
                 
@@ -38,8 +50,12 @@ namespace Code.MSM
                 int newlyInfected = _infectedPeople - temp;//새로 전염된 사람
 
                 float finedPeople = Mathf.Min(Random.Range(_stealth, 1f), 1f);//들킨 사람 비율
+
+                int caughtPeople = (int)((newlyInfected * (finedPeople)) + (float)(_totalPeople - _totalCaughtPeople) / 5 * finedPeople); //들킨 사람 수
                 
-                int caughtPeople = (int)(newlyInfected * (finedPeople)); //들킨 사람 수
+                _totalCaughtPeople += caughtPeople;
+                
+                totalAndCaughtPeopleEvent?.Invoke(_totalPeople, caughtPeople);
             }
         }
     }
