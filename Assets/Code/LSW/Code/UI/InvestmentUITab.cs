@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Code.LSW.Code.So;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -51,9 +50,6 @@ namespace Code.LSW.Code.UI
             public Image background;
             public TextMeshProUGUI costText;
             public List<Image> linkLines;
-
-            [Header("Effect")]
-            public InvestmentEffect effect;
             
             public void SetUnlocked(bool value)
             {
