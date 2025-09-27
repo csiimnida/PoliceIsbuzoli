@@ -42,9 +42,14 @@ namespace Code.MSM
         {   
             ChangeNationalState(nationalName, stealth: stealth);
         }
+
+        public void ChangePoint(string nationalName, float point)
+        {
+            ChangeNationalState(nationalName, getPoint:point);
+        }
         
         public void ChangeNationalState(string nationalName,float infectivity = -1,float spreadTime = -1
-            , float populationDensity = -1,float stealth = -1)
+            , float populationDensity = -1,float stealth = -1, float getPoint = -1)
         {
             NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
             if(!Mathf.Approximately(infectivity, -1))
@@ -53,8 +58,10 @@ namespace Code.MSM
                 nationalData.SpreadTime = spreadTime;
             if (!Mathf.Approximately(populationDensity, -1))
                 nationalData.PopulationDensity = populationDensity;
-            if(!Mathf.Approximately(stealth, -1))
+            if (!Mathf.Approximately(stealth, -1))
                 nationalData.Stealth = stealth;
+            if(!Mathf.Approximately(getPoint, -1))
+                nationalData.GetPoint = getPoint;
             DataContructor.Instance.SetData(nationalData);
         }
         #endregion
@@ -65,6 +72,11 @@ namespace Code.MSM
         {
             NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
             return nationalData;
+        }
+
+        public float GetPoint(string nationalName)
+        {
+            return GetNationalData(nationalName).GetPoint;
         }
 
         public float GetInfectivity(string nationalName)
