@@ -2,7 +2,7 @@
 
 namespace Code.LSW.Code.So
 {
-    [CreateAssetMenu(fileName = "InvestmentEffect", menuName = "So/InvestmentEffect", order = 0)]
+    [CreateAssetMenu(fileName = "InvestmentEffect", menuName = "SO/InvestmentEffect", order = 0)]
     public class InvestmentEffect : ScriptableObject
     {
         private float _infectivity;
