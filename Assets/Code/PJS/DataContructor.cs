@@ -101,7 +101,7 @@ public class DataContructor : MonoSingleton<DataContructor>
                     else
                     {
                         throw new InvalidOperationException(
-            $"Duplicate key detected! Type: {t.Name}, Key: {keyName}");
+            $"Duplicate key detected! type: {t.Name}, fieldName: {keyName}");
                     }
                 }
                 else
