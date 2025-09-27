@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Reflection;
 using CSI._01_Script.System;
 using MoonLib.ScriptFinder.RunTime.Finder.OneFinder;
 using UnityEngine;
@@ -8,10 +10,14 @@ namespace Code.MSM
     public class NationalManager : MonoSingleton<NationalManager>
     {
         [SerializeField] private ScriptAllFinderSO _nationalsFinder;
+        [SerializeField] private DataSetting dataSetting;
 
         private Dictionary<string, NationalStatistics> _nationalDictionary = new Dictionary<string, NationalStatistics>();
         
         private List<NationalStatistics> _nationals;
+        
+        [SerializeField] private string targetType;
+        [SerializeField] private string peopleName;
 
         private void Awake()
         {
@@ -19,6 +25,15 @@ namespace Code.MSM
             foreach (var national in _nationals)
             {
                 _nationalDictionary.Add(national.NationalName, national);
+            }
+        }
+
+        private void Start()
+        {
+            dataSetting.TrySetting();
+            foreach (var national in _nationalDictionary)
+            {
+                national.Value.SetTotalPeople(DataContructor.Instance.GetData<NationalData>(national.Key).FirstTotalPeople);
             }
         }
 

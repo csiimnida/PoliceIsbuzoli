@@ -29,6 +29,13 @@ namespace Code.MSM
 
         private float _timer= 0f;
 
+        public void SetTotalPeople(int value)
+        {
+            _totalPeople = value;
+        }
+
+        public int GetTotalPeople() => _totalPeople;
+
         public void Update()
         {
             _timer += Time.deltaTime;
@@ -57,6 +64,16 @@ namespace Code.MSM
                 
                 totalAndCaughtPeopleEvent?.Invoke(_totalPeople, caughtPeople);
             }
+        }
+
+        private void OnValidate()
+        {
+            if (string.IsNullOrEmpty(NationalName))
+            {
+                gameObject.name = "NationalStatistics";
+                return;
+            }
+            gameObject.name = NationalName;
         }
     }
 }
