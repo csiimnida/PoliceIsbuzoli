@@ -9,5 +9,6 @@
         public float SpreadTime;
         public float PopulationDensity;
         public float Stealth;
+        public float GetPoint;
     }
 }
