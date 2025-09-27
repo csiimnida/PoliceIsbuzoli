@@ -37,6 +37,9 @@ namespace Code.LSW.Code.UI
                     educationTabUI.SetActive(false);
                     cooperationTabUI.SetActive(true);
                     break;
+                default:
+                    Debug.Log("없음");
+                    break;   
             }
         }
     }
