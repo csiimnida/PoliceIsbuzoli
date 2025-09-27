@@ -1547,7 +1547,7 @@ MonoBehaviour:
   image: {fileID: 313505130}
   obj: {fileID: 407469685}
   okBt: {fileID: 1778809854}
-  canvasGroup: {fileID: 0}
+  canvasGroup: {fileID: 407469686}
   durationIn: 0.25
   durationOut: 0.2
   easeIn: 27
