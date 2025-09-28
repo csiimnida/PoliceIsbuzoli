@@ -37,12 +37,42 @@ namespace Code.MSM
             }
         }
 
+        public void UpgradeSet(float infectivity = -1,float spreadTime = -1
+            , float populationDensity = -1,float stealth = -1, float getPoint = -1 , int totalPeople = -1)
+        {
+            foreach (var keyValuePair in _nationalDictionary)
+            {
+                ChangeNationalState(keyValuePair.Key, infectivity, spreadTime, populationDensity, stealth, getPoint,
+                    totalPeople);
+            }
+        }
+
+        public void UpgradePlus(float infectivity = -1,float spreadTime = -1
+            , float populationDensity = -1,float stealth = -1, float getPoint = -1 , int totalPeople = -1)
+        {
+            foreach (var keyValuePair in _nationalDictionary)
+            {
+                PlusNationalState(keyValuePair.Key, infectivity, spreadTime, populationDensity, stealth, getPoint,
+                    totalPeople);
+            }
+        }
+
+        public void UpgradeMultiply(float infectivity = -1,float spreadTime = -1
+            , float populationDensity = -1,float stealth = -1, float getPoint = -1 , int totalPeople = -1)
+        {
+            foreach (var keyValuePair in _nationalDictionary)
+            {
+                MultiplyNationalState(keyValuePair.Key, infectivity, spreadTime, populationDensity, stealth, getPoint,
+                    totalPeople);
+            }
+        }
+
         #region Change
         public void ChangeInfectivity(string nationalName, float infectivity)
         {
             ChangeNationalState(nationalName, infectivity:infectivity);
         }
-        
+
         public void ChangeSpreadTime(string nationalName, float spreadTime)
         {
             ChangeNationalState(nationalName, spreadTime:spreadTime);
@@ -62,9 +92,14 @@ namespace Code.MSM
         {
             ChangeNationalState(nationalName, getPoint:point);
         }
-        
+
+        public void ChangePeople(string nationalName, int people)
+        {
+            ChangeNationalState(nationalName, totalPeople:people);
+        }
+
         public void ChangeNationalState(string nationalName,float infectivity = -1,float spreadTime = -1
-            , float populationDensity = -1,float stealth = -1, float getPoint = -1)
+            , float populationDensity = -1,float stealth = -1, float getPoint = -1 , int totalPeople = -1)
         {
             NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
             if(!Mathf.Approximately(infectivity, -1))
@@ -77,16 +112,124 @@ namespace Code.MSM
                 nationalData.Stealth = stealth;
             if(!Mathf.Approximately(getPoint, -1))
                 nationalData.GetPoint = getPoint;
+            if(totalPeople != -1)
+                nationalData.TotalPeople = totalPeople;
+            DataContructor.Instance.SetData(nationalData);
+        }
+        #endregion
+
+        #region Plus
+        public void PlusInfectivity(string nationalName, float infectivity)
+        {
+            PlusNationalState(nationalName, infectivity:infectivity);
+        }
+
+        public void PlusSpreadTime(string nationalName, float spreadTime)
+        {
+            PlusNationalState(nationalName, spreadTime:spreadTime);
+        }
+
+        public void PlusPopulationDensity(string nationalName, float populationDensity)
+        {
+            PlusNationalState(nationalName, populationDensity:populationDensity);
+        }
+
+        public void PlusStealth(string nationalName, float stealth)
+        {
+            PlusNationalState(nationalName, stealth:stealth);
+        }
+
+        public void PlusPoint(string nationalName, float point)
+        {
+            PlusNationalState(nationalName, getPoint:point);
+        }
+
+        public void PlusPeople(string nationalName, int people)
+        {
+            PlusNationalState(nationalName, totalPeople:people);
+        }
+
+        public void PlusNationalState(string nationalName, float infectivity = 0, float spreadTime = 0
+            , float populationDensity = 0, float stealth = 0, float getPoint = 0, int totalPeople = 0)
+        {
+            NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
+            if(!Mathf.Approximately(infectivity, 0))
+                nationalData.Infectivity += infectivity;
+            if (!Mathf.Approximately(spreadTime, 0))
+                nationalData.SpreadTime += spreadTime;
+            if (!Mathf.Approximately(populationDensity, 0))
+                nationalData.PopulationDensity += populationDensity;
+            if (!Mathf.Approximately(stealth, 0))
+                nationalData.Stealth += stealth;
+            if(!Mathf.Approximately(getPoint, 0))
+                nationalData.GetPoint += getPoint;
+            if(totalPeople != 0)
+                nationalData.TotalPeople += totalPeople;
+            DataContructor.Instance.SetData(nationalData);
+        }
+        #endregion
+
+        #region Multiply
+        public void MultiplyInfectivity(string nationalName, float infectivity)
+        {
+            MultiplyNationalState(nationalName, infectivity:infectivity);
+        }
+
+        public void MultiplySpreadTime(string nationalName, float spreadTime)
+        {
+            MultiplyNationalState(nationalName, spreadTime:spreadTime);
+        }
+
+        public void MultiplyPopulationDensity(string nationalName, float populationDensity)
+        {
+            MultiplyNationalState(nationalName, populationDensity:populationDensity);
+        }
+
+        public void MultiplyStealth(string nationalName, float stealth)
+        {
+            MultiplyNationalState(nationalName, stealth:stealth);
+        }
+
+        public void MultiplyPoint(string nationalName, float point)
+        {
+            MultiplyNationalState(nationalName, getPoint:point);
+        }
+
+        public void MultiplyPeople(string nationalName, int people)
+        {
+            MultiplyNationalState(nationalName, totalPeople:people);
+        }
+
+        public void MultiplyNationalState(string nationalName, float infectivity = 1, float spreadTime = 1
+            , float populationDensity = 1, float stealth = 1, float getPoint = 1, int totalPeople = 1)
+        {
+            NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
+            if(!Mathf.Approximately(infectivity, 1))
+                nationalData.Infectivity *= infectivity;
+            if (!Mathf.Approximately(spreadTime, 1))
+                nationalData.SpreadTime *= spreadTime;
+            if (!Mathf.Approximately(populationDensity, 1))
+                nationalData.PopulationDensity *= populationDensity;
+            if (!Mathf.Approximately(stealth, 1))
+                nationalData.Stealth *= stealth;
+            if(!Mathf.Approximately(getPoint, 1))
+                nationalData.GetPoint *= getPoint;
+            if(totalPeople != 1)
+                nationalData.TotalPeople = Mathf.RoundToInt(nationalData.TotalPeople * totalPeople);
             DataContructor.Instance.SetData(nationalData);
         }
         #endregion
 
         #region Get
-
         public NationalData GetNationalData(string nationalName)
         {
             NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
             return nationalData;
+        }
+
+        public int GetTotalPeople(string nationalName)
+        {
+            return GetNationalData(nationalName).TotalPeople;
         }
 
         public float GetPoint(string nationalName)
@@ -113,7 +256,6 @@ namespace Code.MSM
         {
             return GetNationalData(nationalName).Stealth;
         }
-
         #endregion
 
         public void FailedState(string nationalName)
