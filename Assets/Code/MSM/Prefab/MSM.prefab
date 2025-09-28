@@ -289,210 +289,210 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 1
+        Value: 2.2
       - Key: FirstTotalPeople
-        Value: 1
+        Value: 1540000
       - Key: SpreadTime
-        Value: 1
+        Value: 24.0
       - Key: PopulationDensity
-        Value: 1
+        Value: 35.0
       - Key: Stealth
-        Value: 1
+        Value: 0.90
   - nationId: "\uACBD\uAE30\uB3C4"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 4.0
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 13500000
       - Key: SpreadTime
-        Value: 0
+        Value: 10.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 85.0
       - Key: Stealth
-        Value: 0
+        Value: 0.70
   - nationId: "\uC11C\uC6B8\uD2B9\uBCC4\uC2DC"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 4.5
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 9500000
       - Key: SpreadTime
-        Value: 0
+        Value: 8.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 95.0
       - Key: Stealth
-        Value: 0
+        Value: 0.65
   - nationId: "\uC778\uCC9C\uAD11\uC5ED\uC2DC"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 3.8
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 2950000
       - Key: SpreadTime
-        Value: 0
+        Value: 12.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 75.0
       - Key: Stealth
-        Value: 0
+        Value: 0.72
   - nationId: "\uACBD\uC0C1\uBD81\uB3C4"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 2.7
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 2650000
       - Key: SpreadTime
-        Value: 0
+        Value: 18.5
       - Key: PopulationDensity
-        Value: 0
+        Value: 46.0
       - Key: Stealth
-        Value: 0
+        Value: 0.81
   - nationId: "\uCDA9\uCCAD\uBD81\uB3C4"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 2.8
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 1600000
       - Key: SpreadTime
-        Value: 0
+        Value: 18.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 45.0
       - Key: Stealth
-        Value: 0
+        Value: 0.82
   - nationId: "\uB300\uC804\uAD11\uC5ED\uC2DC"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 3.6
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 1470000
       - Key: SpreadTime
-        Value: 0
+        Value: 13.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 70.0
       - Key: Stealth
-        Value: 0
+        Value: 0.74
   - nationId: "\uC138\uC885\uC2DC"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 2.5
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 370000
       - Key: SpreadTime
-        Value: 0
+        Value: 20.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 40.0
       - Key: Stealth
-        Value: 0
+        Value: 0.85
   - nationId: "\uCDA9\uCCAD\uB0A8\uB3C4"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 2.6
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 2120000
       - Key: SpreadTime
-        Value: 0
+        Value: 19.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 42.0
       - Key: Stealth
-        Value: 0
+        Value: 0.83
   - nationId: "\uB300\uAD6C\uAD11\uC5ED\uC2DC"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 3.7
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 2410000
       - Key: SpreadTime
-        Value: 0
+        Value: 11.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 72.0
       - Key: Stealth
-        Value: 0
+        Value: 0.71
   - nationId: "\uC804\uB77C\uBD81\uB3C4"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 2.9
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 1790000
       - Key: SpreadTime
-        Value: 0
+        Value: 17.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 48.0
       - Key: Stealth
-        Value: 0
+        Value: 0.80
   - nationId: "\uC804\uB77C\uB0A8\uB3C4"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 2.4
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 1820000
       - Key: SpreadTime
-        Value: 0
+        Value: 22.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 38.0
       - Key: Stealth
-        Value: 0
+        Value: 0.87
   - nationId: "\uAD11\uC8FC\uAD11\uC5ED\uC2DC"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 3.4
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 1450000
       - Key: SpreadTime
-        Value: 0
+        Value: 14.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 65.0
       - Key: Stealth
-        Value: 0
+        Value: 0.76
   - nationId: "\uACBD\uC0C1\uB0A8\uB3C4"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 3.0
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 3340000
       - Key: SpreadTime
-        Value: 0
+        Value: 16.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 52.0
       - Key: Stealth
-        Value: 0
+        Value: 0.79
   - nationId: "\uC6B8\uC0B0\uAD11\uC5ED\uC2DC"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 3.3
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 1130000
       - Key: SpreadTime
-        Value: 0
+        Value: 13.5
       - Key: PopulationDensity
-        Value: 0
+        Value: 68.0
       - Key: Stealth
-        Value: 0
+        Value: 0.75
   - nationId: "\uBD80\uC0B0\uAD11\uC5ED\uC2DC"
     statValues:
       _serializedList:
       - Key: Infectivity
-        Value: 0
+        Value: 4.2
       - Key: FirstTotalPeople
-        Value: 0
+        Value: 3350000
       - Key: SpreadTime
-        Value: 0
+        Value: 9.0
       - Key: PopulationDensity
-        Value: 0
+        Value: 88.0
       - Key: Stealth
-        Value: 0
+        Value: 0.68
   _targetType: NationalData
 --- !u!1 &3224484731000889471
 GameObject:
