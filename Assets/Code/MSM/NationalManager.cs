@@ -67,6 +67,104 @@ namespace Code.MSM
             }
         }
 
+        private void Set(float data, string fieldName)
+        {
+            switch (fieldName)
+            {
+                case "Infectivity":
+                    UpgradeSet(infectivity: data);
+                    break;
+                case "SpreadTime":
+                    UpgradeSet(spreadTime: data);
+                    break;
+                case "PopulationDensity":
+                    UpgradeSet(populationDensity: data);
+                    break;
+                case "Stealth":
+                    UpgradeSet(stealth: data);
+                    break;
+                case "GetPoint":
+                    UpgradeSet(getPoint: data);
+                    break;
+            }
+        }
+        
+        private void Add(float data, string fieldName)
+        {
+            switch (fieldName)
+            {
+                case "Infectivity":
+                    UpgradePlus(infectivity: data);
+                    break;
+                case "SpreadTime":
+                    UpgradePlus(spreadTime: data);
+                    break;
+                case "PopulationDensity":
+                    UpgradePlus(populationDensity: data);
+                    break;
+                case "Stealth":
+                    UpgradePlus(stealth: data);
+                    break;
+                case "GetPoint":
+                    UpgradePlus(getPoint: data);
+                    break;
+            }
+        }
+        
+        private void Multiply(float data, string fieldName)
+        {
+            switch (fieldName)
+            {
+                case "Infectivity":
+                    UpgradeMultiply(infectivity: data);
+                    break;
+                case "SpreadTime":
+                    UpgradeMultiply(spreadTime: data);
+                    break;
+                case "PopulationDensity":
+                    UpgradeMultiply(populationDensity: data);
+                    break;
+                case "Stealth":
+                    UpgradeMultiply(stealth: data);
+                    break;
+                case "GetPoint":
+                    UpgradeMultiply(getPoint: data);
+                    break;
+            }
+        }
+
+        public void Upgrade(ModifyType type, float data, string fieldName)
+        {
+            switch (type)
+            {
+                case ModifyType.ADD:
+                    Add(data, fieldName);
+                    break;
+                case ModifyType.SET:
+                    Set(data, fieldName);
+                    break;
+                case ModifyType.MULTIFLY:
+                    Multiply(data, fieldName);
+                    break;
+            }
+        }
+
+        public void Upgrade(ModifyType type, int data)
+        {
+            switch (type)
+            {
+                case ModifyType.ADD:
+                    UpgradePlus(totalPeople: data);
+                    break;
+                case ModifyType.SET:
+                    UpgradeSet(totalPeople: data);
+                    break;
+                case ModifyType.MULTIFLY:
+                    UpgradeMultiply(totalPeople: data);
+                    break;
+            }
+        }
+
         #region Change
         public void ChangeInfectivity(string nationalName, float infectivity)
         {
