@@ -12,6 +12,7 @@
     public float PopulationDensity;
     public float Stealth;
     public float GetPoint;
+    public int TotalPeople;
 
     public int FirstTotalPeople;
 }

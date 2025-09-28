@@ -105,31 +105,19 @@ public class UpgradeNode : MonoBehaviour
             {
                 float cur = (float)currentValue;
                 float val = (float)convertedValue;
-                switch (setting.type)
-                {
-                    case ModifyType.ADD: newValue = cur + val; break;
-                    case ModifyType.MULTIFLY: newValue = cur * val; break;
-                    case ModifyType.SET: newValue = val; break;
-                }
+                NationalManager.Instance.Upgrade(setting.type, val, setting.fieldName);
             }
             else if (field.FieldType == typeof(int))
             {
                 int cur = (int)currentValue;
                 int val = (int)convertedValue;
-                switch (setting.type)
-                {
-                    case ModifyType.ADD: newValue = cur + val; break;
-                    case ModifyType.MULTIFLY: newValue = cur * val; break;
-                    case ModifyType.SET: newValue = val; break;
-                }
+                NationalManager.Instance.Upgrade(setting.type, val);
             }
             else
             {
                 // non-numeric: only SET
                 newValue = convertedValue;
             }
-
-            field.SetValue(target, newValue);
         }
     }
 }

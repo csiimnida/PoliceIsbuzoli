@@ -290,6 +290,8 @@ MonoBehaviour:
       _serializedList:
       - Key: Infectivity
         Value: 1
+      - Key: FirstTotalPeople
+        Value: 1
       - Key: SpreadTime
         Value: 1
       - Key: PopulationDensity
@@ -300,6 +302,8 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
+        Value: 0
+      - Key: FirstTotalPeople
         Value: 0
       - Key: SpreadTime
         Value: 0
@@ -312,6 +316,8 @@ MonoBehaviour:
       _serializedList:
       - Key: Infectivity
         Value: 0
+      - Key: FirstTotalPeople
+        Value: 0
       - Key: SpreadTime
         Value: 0
       - Key: PopulationDensity
@@ -322,6 +328,8 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
+        Value: 0
+      - Key: FirstTotalPeople
         Value: 0
       - Key: SpreadTime
         Value: 0
@@ -334,6 +342,8 @@ MonoBehaviour:
       _serializedList:
       - Key: Infectivity
         Value: 0
+      - Key: FirstTotalPeople
+        Value: 0
       - Key: SpreadTime
         Value: 0
       - Key: PopulationDensity
@@ -344,6 +354,8 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
+        Value: 0
+      - Key: FirstTotalPeople
         Value: 0
       - Key: SpreadTime
         Value: 0
@@ -356,6 +368,8 @@ MonoBehaviour:
       _serializedList:
       - Key: Infectivity
         Value: 0
+      - Key: FirstTotalPeople
+        Value: 0
       - Key: SpreadTime
         Value: 0
       - Key: PopulationDensity
@@ -366,6 +380,8 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
+        Value: 0
+      - Key: FirstTotalPeople
         Value: 0
       - Key: SpreadTime
         Value: 0
@@ -378,6 +394,8 @@ MonoBehaviour:
       _serializedList:
       - Key: Infectivity
         Value: 0
+      - Key: FirstTotalPeople
+        Value: 0
       - Key: SpreadTime
         Value: 0
       - Key: PopulationDensity
@@ -388,6 +406,8 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
+        Value: 0
+      - Key: FirstTotalPeople
         Value: 0
       - Key: SpreadTime
         Value: 0
@@ -400,6 +420,8 @@ MonoBehaviour:
       _serializedList:
       - Key: Infectivity
         Value: 0
+      - Key: FirstTotalPeople
+        Value: 0
       - Key: SpreadTime
         Value: 0
       - Key: PopulationDensity
@@ -410,6 +432,8 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
+        Value: 0
+      - Key: FirstTotalPeople
         Value: 0
       - Key: SpreadTime
         Value: 0
@@ -422,6 +446,8 @@ MonoBehaviour:
       _serializedList:
       - Key: Infectivity
         Value: 0
+      - Key: FirstTotalPeople
+        Value: 0
       - Key: SpreadTime
         Value: 0
       - Key: PopulationDensity
@@ -432,6 +458,8 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
+        Value: 0
+      - Key: FirstTotalPeople
         Value: 0
       - Key: SpreadTime
         Value: 0
@@ -444,6 +472,8 @@ MonoBehaviour:
       _serializedList:
       - Key: Infectivity
         Value: 0
+      - Key: FirstTotalPeople
+        Value: 0
       - Key: SpreadTime
         Value: 0
       - Key: PopulationDensity
@@ -454,6 +484,8 @@ MonoBehaviour:
     statValues:
       _serializedList:
       - Key: Infectivity
+        Value: 0
+      - Key: FirstTotalPeople
         Value: 0
       - Key: SpreadTime
         Value: 0
