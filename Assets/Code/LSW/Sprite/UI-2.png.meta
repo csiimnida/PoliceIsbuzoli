@@ -2449,7 +2449,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -2484,10 +2484,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    maxTextureSize: 4096
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -3524,7 +3524,7 @@ TextureImporter:
         height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 3, y: 3, z: 3, w: 3}
       customData: 
       outline: []
       physicsShape: []
@@ -5856,7 +5856,7 @@ TextureImporter:
         height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 7, y: 8, z: 27, w: 7}
       customData: 
       outline: []
       physicsShape: []
@@ -9134,7 +9134,7 @@ TextureImporter:
         height: 39
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 22, y: 8, z: 23, w: 7}
       customData: 
       outline: []
       physicsShape: []
@@ -9613,9 +9613,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 167
-        y: 1602
+        y: 1611
         width: 142
-        height: 39
+        height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -10982,7 +10982,7 @@ TextureImporter:
         height: 82
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 14, y: 15, z: 14, w: 13}
       customData: 
       outline: []
       physicsShape: []
@@ -12076,10 +12076,10 @@ TextureImporter:
       name: UI-2_434
       rect:
         serializedVersion: 2
-        x: 1479
-        y: 1363
-        width: 179
-        height: 49
+        x: 1482
+        y: 1366
+        width: 172
+        height: 42
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -13072,7 +13072,7 @@ TextureImporter:
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 6, y: 6, z: 8, w: 5}
       customData: 
       outline: []
       physicsShape: []
@@ -17379,9 +17379,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1121
-        y: 655
+        y: 658
         width: 274
-        height: 54
+        height: 51
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -19298,7 +19298,7 @@ TextureImporter:
         height: 149
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 37, y: 42, z: 34, w: 43}
       customData: 
       outline: []
       physicsShape: []
@@ -19320,7 +19320,7 @@ TextureImporter:
         height: 147
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 38, y: 42, z: 34, w: 41}
       customData: 
       outline: []
       physicsShape: []
@@ -19342,7 +19342,7 @@ TextureImporter:
         height: 147
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 36, y: 42, z: 39, w: 47}
       customData: 
       outline: []
       physicsShape: []
@@ -19364,7 +19364,7 @@ TextureImporter:
         height: 147
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 39, y: 42, z: 41, w: 47}
       customData: 
       outline: []
       physicsShape: []
@@ -19386,7 +19386,7 @@ TextureImporter:
         height: 147
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 39, y: 45, z: 40, w: 37}
       customData: 
       outline: []
       physicsShape: []
@@ -20108,7 +20108,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1739
         y: 0
-        width: 231
+        width: 230
         height: 104
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
