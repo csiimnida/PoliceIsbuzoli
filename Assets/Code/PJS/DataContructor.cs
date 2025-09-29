@@ -34,25 +34,25 @@ public class DataContructor : MonoSingleton<DataContructor>
             {
                 foreach(var data in kvp.Value)
                 {
-                    object obj = data.Value; //obj ´Â ±¸Á¶Ã¼
-                    Type t = obj.GetType(); //¿ÀºêÁ§Æ®ÀÇ Å¸ÀÔ
-                    List<string> fields = new List<string>(); //ÇÊµå¸¦ ½ºÆ®¸µÀ¸·Î ¸¸µé¾î¼­ ´ãÀ½
+                    object obj = data.Value; //obj ëŠ” êµ¬ì¡°ì²´
+                    Type t = obj.GetType(); //ì˜¤ë¸Œì íŠ¸ì˜ íƒ€ì…
+                    List<string> fields = new List<string>(); //í•„ë“œë¥¼ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë§Œë“¤ì–´ì„œ ë‹´ìŒ
 
-                    fields.Add(t.Name); //ÇÊµåÀÇ Ã¹¹øÂ° : Å¸ÀÔ
+                    fields.Add(t.Name); //í•„ë“œì˜ ì²«ë²ˆì§¸ : íƒ€ì…
 
-                    foreach (var field in t.GetFields()) //ÇÊµå ÀüºÎ¿¡ ´ëÇØ¼­
+                    foreach (var field in t.GetFields()) //í•„ë“œ ì „ë¶€ì— ëŒ€í•´ì„œ
                     {
-                        fields.Add(field.GetValue(obj)?.ToString() ?? ""); //°ªÀ» ÇÊµå¿¡¼­ °¡Á®¿Í¼­ ½ºÆ®¸µÀ¸·Î ¸¸µé¾î ³Ö±â
+                        fields.Add(field.GetValue(obj)?.ToString() ?? ""); //ê°’ì„ í•„ë“œì—ì„œ ê°€ì ¸ì™€ì„œ ìŠ¤íŠ¸ë§ìœ¼ë¡œ ë§Œë“¤ì–´ ë„£ê¸°
                     }
 
-                    string line = string.Join("\0", fields); //ÇÊµå¸¦ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î ÇÕÄ§
-                    writer.WriteLine(line);//ÀúÀå
+                    string line = string.Join("\0", fields); //í•„ë“œë¥¼ í•˜ë‚˜ì˜ ë¬¸ìì—´ë¡œ í•©ì¹¨
+                    writer.WriteLine(line);//ì €ì¥
                 }
             }
         }
     }
 
-    // ·Îµå
+    // ë¡œë“œ
     private void HandleLoad(Scene scene, LoadSceneMode sceneMode)
     {
         string path = Application.dataPath + "/" + fileName;

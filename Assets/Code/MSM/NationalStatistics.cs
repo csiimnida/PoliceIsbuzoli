@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Code.MSM
@@ -17,7 +18,7 @@ namespace Code.MSM
         private float _populationDensity;
         private float _stealth;
         
-        public UnityEvent<int,int> totalAndCaughtPeopleEvent;
+        public event Action CaughtPeopleEvent;
 
         public float PopulationDensity => _populationDensity * _populationDensity;
         
@@ -35,6 +36,8 @@ namespace Code.MSM
         }
 
         public int GetTotalPeople() => _totalPeople;
+
+        public int GetTotalCaught() => _totalCaughtPeople;
 
         public void Update()
         {
@@ -56,13 +59,13 @@ namespace Code.MSM
                 
                 int newlyInfected = _infectedPeople - temp;//새로 전염된 사람
 
-                float finedPeople = Mathf.Min(Random.Range(_stealth, 1f), 1f);//들킨 사람 비율
+                float finedPeople = 1f - _stealth;//들킨 사람 비율
 
                 int caughtPeople = (int)((newlyInfected * (finedPeople)) + (float)(_totalPeople - _totalCaughtPeople) / 5 * finedPeople); //들킨 사람 수
                 
                 _totalCaughtPeople += caughtPeople;
                 
-                totalAndCaughtPeopleEvent?.Invoke(_totalPeople, caughtPeople);
+                CaughtPeopleEvent?.Invoke();
             }
         }
 
