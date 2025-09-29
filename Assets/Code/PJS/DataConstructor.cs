@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Text;
 using CSI._01_Script.System;
-public class DataContructor : MonoSingleton<DataContructor>
+public class DataConstructor : MonoSingleton<DataConstructor>
 {
     private const string fileName = "Stat.txt";
     public Dictionary<Type, Dictionary<string, object>> dataTypeDict = new();
@@ -34,28 +34,28 @@ public class DataContructor : MonoSingleton<DataContructor>
             {
                 foreach(var data in kvp.Value)
                 {
-                    object obj = data.Value; //obj 는 구조체
-                    Type t = obj.GetType(); //오브젝트의 타입
-                    List<string> fields = new List<string>(); //필드를 스트링으로 만들어서 담음
+                    object obj = data.Value; //obj �� ����ü
+                    Type t = obj.GetType(); //������Ʈ�� Ÿ��
+                    List<string> fields = new List<string>(); //�ʵ带 ��Ʈ������ ���� ����
 
-                    fields.Add(t.Name); //필드의 첫번째 : 타입
+                    fields.Add(t.Name); //�ʵ��� ù��° : Ÿ��
 
-                    foreach (var field in t.GetFields()) //필드 전부에 대해서
+                    foreach (var field in t.GetFields()) //�ʵ� ���ο� ���ؼ�
                     {
-                        fields.Add(field.GetValue(obj)?.ToString() ?? ""); //값을 필드에서 가져와서 스트링으로 만들어 넣기
+                        fields.Add(field.GetValue(obj)?.ToString() ?? ""); //���� �ʵ忡�� �����ͼ� ��Ʈ������ ����� �ֱ�
                     }
 
-                    string line = string.Join("\0", fields); //필드를 하나의 문자열로 합침
-                    writer.WriteLine(line);//저장
+                    string line = string.Join("\0", fields); //�ʵ带 �ϳ��� ���ڿ��� ��ħ
+                    writer.WriteLine(line);//����
                 }
             }
         }
     }
 
-    // 로드
+    // �ε�
     private void HandleLoad(Scene scene, LoadSceneMode sceneMode)
     {
-        string path = Application.dataPath + "/" + fileName;
+        string path = Application.dataPath + "/Resources/" + fileName;
         dataTypeDict.Clear();
         if (!File.Exists(path)) return;
 

@@ -7,14 +7,14 @@ using UnityEngine;
 /// </summary>
 public interface ISerializabelDatas
 {
-    public string Name { get; set; }
+    public string Name { get;}
 }
 
 
 [Serializable]
 public struct DataStructs : ISerializabelDatas //caution : the data structs' first field must be string, don't use this : it exist for test
 {
-    string ISerializabelDatas.Name { get => _name; set => _name = value; }
+    string ISerializabelDatas.Name { get => _name;}
     public string _name;
     public string Description;
     public int integer;

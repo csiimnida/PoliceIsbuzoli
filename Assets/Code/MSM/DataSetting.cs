@@ -35,10 +35,10 @@ namespace Code.MSM
 
         private void ApplySettingsByCreatingAndSet(Type targetType)
         {
-            MethodInfo setMethodGeneric = typeof(DataContructor).GetMethod(nameof(DataContructor.Instance.SetData));
+            MethodInfo setMethodGeneric = typeof(DataConstructor).GetMethod(nameof(DataConstructor.Instance.SetData));
             if (setMethodGeneric == null)
             {
-                Debug.LogError("SetData method not found on DataContructor.");
+                Debug.LogError("SetData method not found on DataConstructor.");
                 return;
             }
 
@@ -115,7 +115,7 @@ namespace Code.MSM
                 try
                 {
                     MethodInfo generic = setMethodGeneric.MakeGenericMethod(targetType);
-                    generic.Invoke(DataContructor.Instance, new object[] { instance });
+                    generic.Invoke(DataConstructor.Instance, new object[] { instance });
                 }
                 catch (TargetInvocationException tie)
                 {

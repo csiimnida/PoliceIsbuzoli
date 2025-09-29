@@ -46,7 +46,7 @@ namespace Code.MSM
             {
                 _timer = 0f;
                 
-                NationalData nationalData = DataContructor.Instance.GetData<NationalData>(NationalName);
+                NationalData nationalData = DataConstructor.Instance.GetData<NationalData>(NationalName);
                 _infectivity = nationalData.Infectivity;
                 _spreadTime = nationalData.SpreadTime;
                 _populationDensity = nationalData.PopulationDensity;
