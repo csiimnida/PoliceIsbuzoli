@@ -53,6 +53,11 @@ public class UpgradeNode : MonoBehaviour
             }
         }
 
+        if(CurrencyGetter.Instance.UseMoney(coast) == false)
+        {
+            requestNodeActive = false;
+        }
+
         if (requestNodeActive)
         {
             ApplySettings(GetTargetData(targetType));
