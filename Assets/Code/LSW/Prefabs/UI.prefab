@@ -5495,17 +5495,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5691920799525742109}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 739670435852915566}
+  m_Children:
+  - {fileID: 739670435852915566}
+  m_Father: {fileID: 7710079969019284119}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.095879555, y: 0.8519974}
-  m_SizeDelta: {x: -1.83423, y: -20.9339}
+  m_AnchoredPosition: {x: -38.07661, y: 13.251983}
+  m_SizeDelta: {x: -82.17923, y: -89.783905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3108869390990046218
 CanvasRenderer:
@@ -6918,18 +6919,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7119303929580882362}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8506203188996056357}
-  m_Father: {fileID: 7710079969019284119}
+  m_Children: []
+  m_Father: {fileID: 8506203188996056357}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: 12.4}
-  m_SizeDelta: {x: 19.655, y: 224.32}
+  m_AnchoredPosition: {x: -0.61526, y: 0.2772}
+  m_SizeDelta: {x: 19.05838, y: 216.6413}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3413300089548922320
 CanvasRenderer:
@@ -6952,14 +6952,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3018868, g: 0.3018868, b: 0.3018868, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -2646434919211488081, guid: 8605c82fd7091fc4dba9114cd940c140, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7665,7 +7665,7 @@ RectTransform:
   m_LocalScale: {x: 8.2333, y: 0.725, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 739670435852915566}
+  - {fileID: 8506203188996056357}
   - {fileID: 1538228318623662614}
   - {fileID: 7872595744217428640}
   - {fileID: 5818691014328011789}

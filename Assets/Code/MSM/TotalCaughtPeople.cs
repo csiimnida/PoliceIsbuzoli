@@ -1,11 +1,12 @@
 using System;
+using CSI._01_Script.System;
 using UnityEngine;
 
 namespace Code.MSM
 {
-    public class TotalCaughtPeople : MonoBehaviour
+    public class TotalCaughtPeople : MonoSingleton<TotalCaughtPeople>
     {
-        public static int TotalCaughtPeopleValue { get; private set; } = 0;
+        public int TotalCaughtPeopleValue { get; private set; } = 0;
 
         private void Start()
         {

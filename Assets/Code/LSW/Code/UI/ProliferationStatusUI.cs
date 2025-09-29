@@ -1,3 +1,4 @@
+using Code.MSM;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -26,16 +27,10 @@ namespace Code.LSW.Code.UI
         {
             Apply(currentRate);
         }
-        // 테스트 용임ㅇㅇ
-        private void OnValidate()
+        
+        public void Update()
         {
-            currentRate = Mathf.Clamp01(currentRate);
-            Apply(currentRate);
-        }
-
-        // 이거 실행해주면 됨()
-        public void UpdateStatus(float rate)
-        {
+            float rate = TotalCaughtPeople.Instance.TotalCaughtPeopleValue / 50990000;
             currentRate = Mathf.Clamp01(rate);
             Apply(currentRate);
         }
@@ -49,10 +44,7 @@ namespace Code.LSW.Code.UI
 
             if (slider)
             {
-                if (Mathf.Approximately(slider.minValue, 0f) && Mathf.Approximately(slider.maxValue, 1f))
-                    slider.value = rate;
-                else
-                    slider.value = Mathf.Lerp(slider.minValue, slider.maxValue, rate);
+                slider.normalizedValue = rate;
             }
 
             if (text)
