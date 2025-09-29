@@ -2,11 +2,12 @@ using Code.MSM;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Code.LSW.Code.UI;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UpgradeNode : MonoBehaviour
+public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private UpgradeNode[] RequestNode;
     [SerializeField] private UpgradeNode[] NextNode;
@@ -53,6 +54,11 @@ public class UpgradeNode : MonoBehaviour
             }
         }
 
+        if(CurrencyGetter.Instance.UseMoney(coast) == false)
+        {
+            requestNodeActive = false;
+        }
+
         if (requestNodeActive)
         {
             ApplySettings(GetTargetData(targetType));
@@ -67,9 +73,9 @@ public class UpgradeNode : MonoBehaviour
             Debug.LogWarning($"type not found: {typeName}");
             return null;
         }
-        var method = typeof(DataContructor).GetMethod("GetData");
+        var method = typeof(DataConstructor).GetMethod("GetData");
         var genericMethod = method.MakeGenericMethod(targetType);
-        var result = genericMethod.Invoke(DataContructor.Instance, new object[] { _key });
+        var result = genericMethod.Invoke(DataConstructor.Instance, new object[] { _key });
 
         return result as ISerializabelDatas;
     }
@@ -105,33 +111,27 @@ public class UpgradeNode : MonoBehaviour
             {
                 float cur = (float)currentValue;
                 float val = (float)convertedValue;
-                switch (setting.type)
-                {
-                    case ModifyType.ADD: newValue = cur + val; break;
-                    case ModifyType.MULTIFLY: newValue = cur * val; break;
-                    case ModifyType.SET: newValue = val; break;
-                }
+                NationalManager.Instance.Upgrade(setting.type, val, setting.fieldName);
             }
             else if (field.FieldType == typeof(int))
             {
                 int cur = (int)currentValue;
                 int val = (int)convertedValue;
-                switch (setting.type)
-                {
-                    case ModifyType.ADD: newValue = cur + val; break;
-                    case ModifyType.MULTIFLY: newValue = cur * val; break;
-                    case ModifyType.SET: newValue = val; break;
-                }
+                NationalManager.Instance.Upgrade(setting.type, val);
             }
             else
             {
                 // non-numeric: only SET
                 newValue = convertedValue;
             }
-
-            field.SetValue(target, newValue);
         }
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+        => UIManager.Instance.ShowNodeUI(eventData.position, _key, coast);
+
+    public void OnPointerExit(PointerEventData eventData)
+        => UIManager.Instance.HideNodeUI();
 }
 
 public enum ModifyType

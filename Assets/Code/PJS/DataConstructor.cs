@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Text;
 using CSI._01_Script.System;
-public class DataContructor : MonoSingleton<DataContructor>
+public class DataConstructor : MonoSingleton<DataConstructor>
 {
     private const string fileName = "Stat.txt";
     public Dictionary<Type, Dictionary<string, object>> dataTypeDict = new();
@@ -34,28 +34,28 @@ public class DataContructor : MonoSingleton<DataContructor>
             {
                 foreach(var data in kvp.Value)
                 {
-                    object obj = data.Value; //obj ´Â ±¸Á¶Ã¼
-                    Type t = obj.GetType(); //¿ÀºêÁ§Æ®ÀÇ Å¸ÀÔ
-                    List<string> fields = new List<string>(); //ÇÊµå¸¦ ½ºÆ®¸µÀ¸·Î ¸¸µé¾î¼­ ´ãÀ½
+                    object obj = data.Value; //obj ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¼
+                    Type t = obj.GetType(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ Å¸ï¿½ï¿½
+                    List<string> fields = new List<string>(); //ï¿½Êµå¸¦ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½î¼­ ï¿½ï¿½ï¿½ï¿½
 
-                    fields.Add(t.Name); //ÇÊµåÀÇ Ã¹¹øÂ° : Å¸ÀÔ
+                    fields.Add(t.Name); //ï¿½Êµï¿½ï¿½ï¿½ Ã¹ï¿½ï¿½Â° : Å¸ï¿½ï¿½
 
-                    foreach (var field in t.GetFields()) //ÇÊµå ÀüºÎ¿¡ ´ëÇØ¼­
+                    foreach (var field in t.GetFields()) //ï¿½Êµï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½
                     {
-                        fields.Add(field.GetValue(obj)?.ToString() ?? ""); //°ªÀ» ÇÊµå¿¡¼­ °¡Á®¿Í¼­ ½ºÆ®¸µÀ¸·Î ¸¸µé¾î ³Ö±â
+                        fields.Add(field.GetValue(obj)?.ToString() ?? ""); //ï¿½ï¿½ï¿½ï¿½ ï¿½Êµå¿¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö±ï¿½
                     }
 
-                    string line = string.Join("\0", fields); //ÇÊµå¸¦ ÇÏ³ªÀÇ ¹®ÀÚ¿­·Î ÇÕÄ§
-                    writer.WriteLine(line);//ÀúÀå
+                    string line = string.Join("\0", fields); //ï¿½Êµå¸¦ ï¿½Ï³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½ï¿½Ä§
+                    writer.WriteLine(line);//ï¿½ï¿½ï¿½ï¿½
                 }
             }
         }
     }
 
-    // ·Îµå
+    // ï¿½Îµï¿½
     private void HandleLoad(Scene scene, LoadSceneMode sceneMode)
     {
-        string path = Application.dataPath + "/" + fileName;
+        string path = Application.dataPath + "/Resources/" + fileName;
         dataTypeDict.Clear();
         if (!File.Exists(path)) return;
 

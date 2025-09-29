@@ -8,7 +8,7 @@ public class Tester : MonoBehaviour
     [ContextMenu("saveTest")]
     public void Test() //TestComplete, removeThis
     {
-        DataContructor.Instance.AddData<NationalData>(new NationalData()
+        DataConstructor.Instance.AddData<NationalData>(new NationalData()
         {
             NationalName = "°æ±âµµ",
             Infectivity = 1.2f,

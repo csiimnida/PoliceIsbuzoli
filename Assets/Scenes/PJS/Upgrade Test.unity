@@ -2088,6 +2088,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPoints: 10
   currentPoints: 0
+  pointsMeaning: Points
   lockedColor: {r: 0.54088044, g: 0, b: 0, a: 1}
   availableColor: {r: 1, g: 0.8603352, b: 0, a: 1}
   unlockedColor: {r: 0, g: 1, b: 0.14525127, a: 1}
@@ -2111,7 +2112,6 @@ MonoBehaviour:
     linkLines:
     - {fileID: 513269673}
     - {fileID: 847513597}
-    effect: {fileID: 0}
   - id: 1
     title: Test-2
     cost: 10
@@ -2123,7 +2123,6 @@ MonoBehaviour:
     costText: {fileID: 1670603444}
     linkLines:
     - {fileID: 2144016505}
-    effect: {fileID: 0}
   - id: 2
     title: Test-3
     cost: 17
@@ -2134,7 +2133,6 @@ MonoBehaviour:
     background: {fileID: 1843554793}
     costText: {fileID: 1514721678}
     linkLines: []
-    effect: {fileID: 0}
   - id: 3
     title: Test-4
     cost: 30
@@ -2146,7 +2144,6 @@ MonoBehaviour:
     costText: {fileID: 1527149636}
     linkLines:
     - {fileID: 666071818}
-    effect: {fileID: 0}
 --- !u!1 &220243108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,6 +2981,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 491307034}
   m_CullTransparentMesh: 1
+--- !u!1001 &504531830
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 733.21747
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 744.6112
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.4802217
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3667064546356631216, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7412985360136804871, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
+      propertyPath: m_Name
+      value: MSM
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e98f0165360dc747ae160ddcc4527ad, type: 3}
 --- !u!1 &513269670
 GameObject:
   m_ObjectHideFlags: 0
@@ -6116,8 +6170,8 @@ MonoBehaviour:
   - fieldName: Infectivity
     value: 
     type: 0
-  targetType: 
-  _key: 
+  targetType: NationData
+  _key: "\uC11C\uC6B8"
 --- !u!1 &935629898
 GameObject:
   m_ObjectHideFlags: 0
@@ -7112,6 +7166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPoints: 10
   currentPoints: 0
+  pointsMeaning: Points
   lockedColor: {r: 0.54088044, g: 0, b: 0, a: 1}
   availableColor: {r: 1, g: 0.8603352, b: 0, a: 1}
   unlockedColor: {r: 0, g: 1, b: 0.14525127, a: 1}
@@ -7135,7 +7190,6 @@ MonoBehaviour:
     linkLines:
     - {fileID: 1943721501}
     - {fileID: 925584744}
-    effect: {fileID: 0}
   - id: 1
     title: Test-2
     cost: 10
@@ -7147,7 +7201,6 @@ MonoBehaviour:
     costText: {fileID: 765490184}
     linkLines:
     - {fileID: 1516877749}
-    effect: {fileID: 0}
   - id: 2
     title: Test-3
     cost: 17
@@ -7158,7 +7211,6 @@ MonoBehaviour:
     background: {fileID: 935629900}
     costText: {fileID: 130948641}
     linkLines: []
-    effect: {fileID: 0}
   - id: 3
     title: Test-4
     cost: 30
@@ -7170,7 +7222,6 @@ MonoBehaviour:
     costText: {fileID: 529917969}
     linkLines:
     - {fileID: 1175702636}
-    effect: {fileID: 0}
 --- !u!1 &1074360925
 GameObject:
   m_ObjectHideFlags: 0
@@ -7529,8 +7580,11 @@ MonoBehaviour:
   - fieldName: Infectivity
     value: 16
     type: 0
-  targetType: Code.MSM.NationalData
-  _key: "\uACBD\uAE30\uB3C4"
+  - fieldName: Infectivity
+    value: 16
+    type: 0
+  targetType: NationData
+  _key: "\uC11C\uC6B8"
 --- !u!1 &1079249375
 GameObject:
   m_ObjectHideFlags: 0
@@ -8039,8 +8093,8 @@ MonoBehaviour:
   - fieldName: 
     value: 
     type: 0
-  targetType: 
-  _key: 
+  targetType: NationData
+  _key: "\uC11C\uC6B8"
 --- !u!1 &1156074600
 GameObject:
   m_ObjectHideFlags: 0
@@ -8829,6 +8883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPoints: 10
   currentPoints: 0
+  pointsMeaning: Points
   lockedColor: {r: 0.54088044, g: 0, b: 0, a: 1}
   availableColor: {r: 1, g: 0.8603352, b: 0, a: 1}
   unlockedColor: {r: 0, g: 1, b: 0.14525127, a: 1}
@@ -8852,7 +8907,6 @@ MonoBehaviour:
     linkLines:
     - {fileID: 325121466}
     - {fileID: 1442828992}
-    effect: {fileID: 0}
   - id: 1
     title: Test-2
     cost: 10
@@ -8864,7 +8918,6 @@ MonoBehaviour:
     costText: {fileID: 1385983188}
     linkLines:
     - {fileID: 1232477282}
-    effect: {fileID: 0}
   - id: 2
     title: Test-3
     cost: 17
@@ -8875,7 +8928,6 @@ MonoBehaviour:
     background: {fileID: 1656180880}
     costText: {fileID: 972312749}
     linkLines: []
-    effect: {fileID: 0}
   - id: 3
     title: Test-4
     cost: 30
@@ -8887,7 +8939,6 @@ MonoBehaviour:
     costText: {fileID: 43900744}
     linkLines:
     - {fileID: 909554807}
-    effect: {fileID: 0}
 --- !u!1 &1266091951
 GameObject:
   m_ObjectHideFlags: 0
@@ -9031,8 +9082,8 @@ MonoBehaviour:
   - fieldName: Infectivity
     value: 
     type: 0
-  targetType: 
-  _key: 
+  targetType: NationData
+  _key: "\uC11C\uC6B8"
 --- !u!1 &1280681374
 GameObject:
   m_ObjectHideFlags: 0
@@ -9704,31 +9755,6 @@ MonoBehaviour:
   normalAlpha: 1
   hoverAlpha: 0.4
   fadeDuration: 0.1
-  fadeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  ignoreWhenNotInteractable: 0
 --- !u!1 &1442828989
 GameObject:
   m_ObjectHideFlags: 0
@@ -13997,6 +14023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingPoints: 10
   currentPoints: 0
+  pointsMeaning: Points
   lockedColor: {r: 0.54088044, g: 0, b: 0, a: 1}
   availableColor: {r: 1, g: 0.8603352, b: 0, a: 1}
   unlockedColor: {r: 0, g: 1, b: 0.14525127, a: 1}
@@ -14020,7 +14047,6 @@ MonoBehaviour:
     linkLines:
     - {fileID: 1266091954}
     - {fileID: 1122518042}
-    effect: {fileID: 0}
   - id: 1
     title: Test-2
     cost: 10
@@ -14032,7 +14058,6 @@ MonoBehaviour:
     costText: {fileID: 1641128254}
     linkLines:
     - {fileID: 933840131}
-    effect: {fileID: 0}
   - id: 2
     title: Test-3
     cost: 17
@@ -14043,7 +14068,6 @@ MonoBehaviour:
     background: {fileID: 937518873}
     costText: {fileID: 92955783}
     linkLines: []
-    effect: {fileID: 0}
   - id: 3
     title: Test-4
     cost: 30
@@ -14055,7 +14079,6 @@ MonoBehaviour:
     costText: {fileID: 457936340}
     linkLines:
     - {fileID: 1077398954}
-    effect: {fileID: 0}
 --- !u!1 &2074865402
 GameObject:
   m_ObjectHideFlags: 0
@@ -14475,3 +14498,4 @@ SceneRoots:
   - {fileID: 966426523}
   - {fileID: 414347213}
   - {fileID: 1575069979}
+  - {fileID: 504531830}
