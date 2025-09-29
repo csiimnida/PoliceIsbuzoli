@@ -3,7 +3,6 @@
     string ISerializabelDatas.Name
     {
         get => NationalName;
-        set => NationalName = value;
     }
 
     public string NationalName;
