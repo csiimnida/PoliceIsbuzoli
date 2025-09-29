@@ -14,6 +14,8 @@ namespace Code.MSM
 
         private Dictionary<string, NationalStatistics> _nationalDictionary = new Dictionary<string, NationalStatistics>();
         
+        private static readonly string incomekey = "income";
+        
         private List<NationalStatistics> _nationals;
         
         [SerializeField] private string targetType;
@@ -108,9 +110,15 @@ namespace Code.MSM
                 case "GetPoint":
                     UpgradeSet(getPoint: data);
                     break;
+                case "taxIncome":
+                    UpgradeTaxSet(taxIncome:data);
+                    break;
+                case "taxIncomeRate":
+                    UpgradeTaxSet(taxIncomeRate:data);
+                    break;
             }
         }
-        
+
         private void Add(float data, string fieldName)
         {
             switch (fieldName)
@@ -130,9 +138,15 @@ namespace Code.MSM
                 case "GetPoint":
                     UpgradePlus(getPoint: data);
                     break;
+                case "taxIncome":
+                    UpgradeTaxPlus(taxIncome:data);
+                    break;
+                case "taxIncomeRate":
+                    UpgradeTaxPlus(taxIncomeRate:data);
+                    break;
             }
         }
-        
+
         private void Multiply(float data, string fieldName)
         {
             switch (fieldName)
@@ -152,7 +166,39 @@ namespace Code.MSM
                 case "GetPoint":
                     UpgradeMultiply(getPoint: data);
                     break;
+                case "taxIncome":
+                    UpgradeTaxMultiply(taxIncome:data);
+                    break;
+                case "taxIncomeRate":
+                    UpgradeTaxMultiply(taxIncomeRate:data);
+                    break;
             }
+        }
+        
+        private void UpgradeTaxSet(float taxIncome = -1, float taxIncomeRate = -1)
+        {
+            IncomeStat incomeStat = DataConstructor.Instance.GetData<IncomeStat>(incomekey);
+            if(!Mathf.Approximately(taxIncome, -1))
+                incomeStat.taxIncome = taxIncome;
+            if(!Mathf.Approximately(taxIncomeRate, -1))
+                incomeStat.taxIncomeRate = taxIncomeRate;
+            DataConstructor.Instance.SetData(incomeStat);
+        }
+
+        private void UpgradeTaxMultiply(float taxIncome = 1, float taxIncomeRate = 1)
+        {
+            IncomeStat incomeStat = DataConstructor.Instance.GetData<IncomeStat>(incomekey);
+            incomeStat.taxIncome *= taxIncome;
+            incomeStat.taxIncomeRate *= taxIncomeRate;
+            DataConstructor.Instance.SetData(incomeStat);
+        }
+        
+        private void UpgradeTaxPlus(float taxIncome = 0, float taxIncomeRate = 0)
+        {
+            IncomeStat incomeStat = DataConstructor.Instance.GetData<IncomeStat>(incomekey);
+            incomeStat.taxIncome += taxIncome;
+            incomeStat.taxIncomeRate += taxIncomeRate;
+            DataConstructor.Instance.SetData(incomeStat);
         }
 
         public void Upgrade(ModifyType type, float data, string fieldName)
@@ -273,18 +319,12 @@ namespace Code.MSM
             , float populationDensity = 0, float stealth = 0, float getPoint = 0, int totalPeople = 0)
         {
             NationalData nationalData = DataConstructor.Instance.GetData<NationalData>(nationalName);
-            if(!Mathf.Approximately(infectivity, 0))
-                nationalData.Infectivity += infectivity;
-            if (!Mathf.Approximately(spreadTime, 0))
-                nationalData.SpreadTime += spreadTime;
-            if (!Mathf.Approximately(populationDensity, 0))
-                nationalData.PopulationDensity += populationDensity;
-            if (!Mathf.Approximately(stealth, 0))
-                nationalData.Stealth += stealth;
-            if(!Mathf.Approximately(getPoint, 0))
-                nationalData.GetPoint += getPoint;
-            if(totalPeople != 0)
-                nationalData.TotalPeople += totalPeople;
+            nationalData.Infectivity += infectivity;
+            nationalData.SpreadTime += spreadTime;
+            nationalData.PopulationDensity += populationDensity;
+            nationalData.Stealth += stealth;
+            nationalData.GetPoint += getPoint;
+            nationalData.TotalPeople += totalPeople;
             DataConstructor.Instance.SetData(nationalData);
         }
         #endregion
@@ -324,18 +364,12 @@ namespace Code.MSM
             , float populationDensity = 1, float stealth = 1, float getPoint = 1, int totalPeople = 1)
         {
             NationalData nationalData = DataConstructor.Instance.GetData<NationalData>(nationalName);
-            if(!Mathf.Approximately(infectivity, 1))
-                nationalData.Infectivity *= infectivity;
-            if (!Mathf.Approximately(spreadTime, 1))
-                nationalData.SpreadTime *= spreadTime;
-            if (!Mathf.Approximately(populationDensity, 1))
-                nationalData.PopulationDensity *= populationDensity;
-            if (!Mathf.Approximately(stealth, 1))
-                nationalData.Stealth *= stealth;
-            if(!Mathf.Approximately(getPoint, 1))
-                nationalData.GetPoint *= getPoint;
-            if(totalPeople != 1)
-                nationalData.TotalPeople = Mathf.RoundToInt(nationalData.TotalPeople * totalPeople);
+            nationalData.Infectivity *= infectivity;
+            nationalData.SpreadTime *= spreadTime;
+            nationalData.PopulationDensity *= populationDensity;
+            nationalData.Stealth *= stealth;
+            nationalData.GetPoint *= getPoint;
+            nationalData.TotalPeople = Mathf.RoundToInt(nationalData.TotalPeople * totalPeople);
             DataConstructor.Instance.SetData(nationalData);
         }
         #endregion
