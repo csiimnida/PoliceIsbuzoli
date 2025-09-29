@@ -522,7 +522,7 @@ MonoBehaviour:
   canvasGroup: {fileID: 0}
   nameText: {fileID: 1119887834}
   description: {fileID: 1389063039}
-  costText: {fileID: 0}
+  costText: {fileID: 1087568764}
 --- !u!114 &92161327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5359,7 +5359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.19350052, y: -0.0000078678}
+  m_AnchoredPosition: {x: -0.19350052, y: -0.0000076293945}
   m_SizeDelta: {x: -11.2264, y: 0.000015259}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1087568764
@@ -8859,7 +8859,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1826951907}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6b05f2e49ee45a4aa3b7315a726542d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0763d7b74f9758c4e88dcf71bdb2cc60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1828014881
