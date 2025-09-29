@@ -2,11 +2,12 @@ using Code.MSM;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using Code.LSW.Code.UI;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class UpgradeNode : MonoBehaviour
+public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private UpgradeNode[] RequestNode;
     [SerializeField] private UpgradeNode[] NextNode;
@@ -120,6 +121,12 @@ public class UpgradeNode : MonoBehaviour
             }
         }
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+        => UIManager.Instance.ShowNodeUI(eventData.position, _key, coast);
+
+    public void OnPointerExit(PointerEventData eventData)
+        => UIManager.Instance.HideNodeUI();
 }
 
 public enum ModifyType
