@@ -19,13 +19,33 @@ namespace Code.MSM
         [SerializeField] private string targetType;
         [SerializeField] private string peopleName;
 
+        public event Action<int> TotalCaughtChangeEvent;
+
         private void Awake()
         {
             _nationals = _nationalsFinder.GetTarget<NationalStatistics>();
             foreach (var national in _nationals)
             {
                 _nationalDictionary.Add(national.NationalName, national);
+                national.CaughtPeopleEvent += TotalCaughtChange;
             }
+        }
+
+        private void OnDestroy()
+        {
+            foreach (var nationalDictionaryValue in _nationalDictionary.Values)
+            {
+                nationalDictionaryValue.CaughtPeopleEvent -= TotalCaughtChange;
+            }
+        }
+
+        private void TotalCaughtChange()
+        {
+            int total = 0;
+            
+            _nationals.ForEach(n => total += n.GetTotalCaught());
+            
+            TotalCaughtChangeEvent?.Invoke(total);
         }
 
         private void Start()
@@ -36,6 +56,8 @@ namespace Code.MSM
                 national.Value.SetTotalPeople(DataConstructor.Instance.GetData<NationalData>(national.Key).FirstTotalPeople);
             }
         }
+        
+        
 
         public void UpgradeSet(float infectivity = -1,float spreadTime = -1
             , float populationDensity = -1,float stealth = -1, float getPoint = -1 , int totalPeople = -1)
@@ -362,6 +384,8 @@ namespace Code.MSM
             {
                 //혹시 필요할까봐 남겨둠
                 //_nationals.Remove(national);
+                national.CaughtPeopleEvent -= TotalCaughtChange;
+
             }
         }
     }
