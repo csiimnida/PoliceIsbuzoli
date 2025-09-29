@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
+#if UNITY_EDITOR
 using MoonLib.ScriptFinder.RunTime.Attribute;
 using UnityEditor;
+#endif
 using UnityEngine;
 
 namespace MoonLib.ScriptFinder.RunTime.Finder.ListFinder
