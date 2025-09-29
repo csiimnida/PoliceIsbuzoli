@@ -33,7 +33,7 @@ namespace Code.MSM
             dataSetting.TrySetting();
             foreach (var national in _nationalDictionary)
             {
-                national.Value.SetTotalPeople(DataContructor.Instance.GetData<NationalData>(national.Key).FirstTotalPeople);
+                national.Value.SetTotalPeople(DataConstructor.Instance.GetData<NationalData>(national.Key).FirstTotalPeople);
             }
         }
 
@@ -199,7 +199,7 @@ namespace Code.MSM
         public void ChangeNationalState(string nationalName,float infectivity = -1,float spreadTime = -1
             , float populationDensity = -1,float stealth = -1, float getPoint = -1 , int totalPeople = -1)
         {
-            NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
+            NationalData nationalData = DataConstructor.Instance.GetData<NationalData>(nationalName);
             if(!Mathf.Approximately(infectivity, -1))
                 nationalData.Infectivity = infectivity;
             if (!Mathf.Approximately(spreadTime, -1))
@@ -212,7 +212,7 @@ namespace Code.MSM
                 nationalData.GetPoint = getPoint;
             if(totalPeople != -1)
                 nationalData.TotalPeople = totalPeople;
-            DataContructor.Instance.SetData(nationalData);
+            DataConstructor.Instance.SetData(nationalData);
         }
         #endregion
 
@@ -250,7 +250,7 @@ namespace Code.MSM
         public void PlusNationalState(string nationalName, float infectivity = 0, float spreadTime = 0
             , float populationDensity = 0, float stealth = 0, float getPoint = 0, int totalPeople = 0)
         {
-            NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
+            NationalData nationalData = DataConstructor.Instance.GetData<NationalData>(nationalName);
             if(!Mathf.Approximately(infectivity, 0))
                 nationalData.Infectivity += infectivity;
             if (!Mathf.Approximately(spreadTime, 0))
@@ -263,7 +263,7 @@ namespace Code.MSM
                 nationalData.GetPoint += getPoint;
             if(totalPeople != 0)
                 nationalData.TotalPeople += totalPeople;
-            DataContructor.Instance.SetData(nationalData);
+            DataConstructor.Instance.SetData(nationalData);
         }
         #endregion
 
@@ -301,7 +301,7 @@ namespace Code.MSM
         public void MultiplyNationalState(string nationalName, float infectivity = 1, float spreadTime = 1
             , float populationDensity = 1, float stealth = 1, float getPoint = 1, int totalPeople = 1)
         {
-            NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
+            NationalData nationalData = DataConstructor.Instance.GetData<NationalData>(nationalName);
             if(!Mathf.Approximately(infectivity, 1))
                 nationalData.Infectivity *= infectivity;
             if (!Mathf.Approximately(spreadTime, 1))
@@ -314,14 +314,14 @@ namespace Code.MSM
                 nationalData.GetPoint *= getPoint;
             if(totalPeople != 1)
                 nationalData.TotalPeople = Mathf.RoundToInt(nationalData.TotalPeople * totalPeople);
-            DataContructor.Instance.SetData(nationalData);
+            DataConstructor.Instance.SetData(nationalData);
         }
         #endregion
 
         #region Get
         public NationalData GetNationalData(string nationalName)
         {
-            NationalData nationalData = DataContructor.Instance.GetData<NationalData>(nationalName);
+            NationalData nationalData = DataConstructor.Instance.GetData<NationalData>(nationalName);
             return nationalData;
         }
 

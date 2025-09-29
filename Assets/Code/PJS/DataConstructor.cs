@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Text;
 using CSI._01_Script.System;
-public class DataContructor : MonoSingleton<DataContructor>
+public class DataConstructor : MonoSingleton<DataConstructor>
 {
     private const string fileName = "Stat.txt";
     public Dictionary<Type, Dictionary<string, object>> dataTypeDict = new();
