@@ -67,9 +67,9 @@ public class UpgradeNode : MonoBehaviour
             Debug.LogWarning($"type not found: {typeName}");
             return null;
         }
-        var method = typeof(DataContructor).GetMethod("GetData");
+        var method = typeof(DataConstructor).GetMethod("GetData");
         var genericMethod = method.MakeGenericMethod(targetType);
-        var result = genericMethod.Invoke(DataContructor.Instance, new object[] { _key });
+        var result = genericMethod.Invoke(DataConstructor.Instance, new object[] { _key });
 
         return result as ISerializabelDatas;
     }

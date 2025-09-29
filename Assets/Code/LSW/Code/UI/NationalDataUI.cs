@@ -20,7 +20,7 @@ namespace Code.LSW.Code.UI
         
         public void OnSelectNation(string nationId)
         {
-            var nationalData = DataContructor.Instance.GetData<NationalData>(nationId);
+            var nationalData = DataConstructor.Instance.GetData<NationalData>(nationId);
 
             if (nationalData == null)
             {
