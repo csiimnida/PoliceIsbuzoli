@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public interface ISerializabelDatas
 {
-    public string Name { get; set; }
+    public string Name { get;}
 }
 
 
