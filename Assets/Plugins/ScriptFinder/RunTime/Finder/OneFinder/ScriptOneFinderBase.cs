@@ -1,4 +1,6 @@
+#if UNITY_EDITOR
 using MoonLib.ScriptFinder.RunTime.Attribute;
+#endif
 using MoonLib.ScriptFinder.RunTime.Serializable;
 using UnityEditor;
 using UnityEngine;
