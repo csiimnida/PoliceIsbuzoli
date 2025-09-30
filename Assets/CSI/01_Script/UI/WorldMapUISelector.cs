@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 namespace CSI._01_Script.UI
 {
@@ -109,6 +110,12 @@ namespace CSI._01_Script.UI
         /// </summary>
         public bool SelectAtScreenPosition(Vector2 screenPosition)
         {
+            // 다른 UI가 이 이미지 위를 가리고 있으면 선택 동작을 막습니다.
+            if (IsBlockedByUI(screenPosition))
+            {
+                return false;
+            }
+
             if (TryGetNationAt(screenPosition, out var entry))
             {
                 Debug.Log(entry.nationId);
@@ -269,6 +276,48 @@ namespace CSI._01_Script.UI
                 }
             }
 #endif
+        }
+
+        /// <summary>
+        /// 주어진 화면 좌표에서 다른 UI가 worldMapImage 위를 가리고 있으면 true를 반환합니다.
+        /// </summary>
+        private bool IsBlockedByUI(Vector2 screenPosition)
+        {
+            if (worldMapImage == null)
+                return false;
+
+            if (EventSystem.current == null)
+                return false;
+
+            var ped = new PointerEventData(EventSystem.current)
+            {
+                position = screenPosition
+            };
+
+            var results = new List<RaycastResult>();
+            // 모든 GraphicRaycaster를 대상으로 레이캐스트합니다.
+            EventSystem.current.RaycastAll(ped, results);
+            if (results.Count == 0)
+                return false;
+
+            Transform mapTransform = worldMapImage.transform;
+
+            // Raycast 결과는 상단(가장 앞)부터 정렬되어 있습니다.
+            foreach (var r in results)
+            {
+                var go = r.gameObject;
+                if (go == null) continue;
+
+                var t = go.transform;
+                // 맵 이미지 자신이거나 그 자식이면 가려진 것이 아니라고 판단합니다.
+                if (t == mapTransform || t.IsChildOf(mapTransform))
+                    return false;
+
+                // 다른 UI가 더 위에 있으므로 차단
+                return true;
+            }
+
+            return false;
         }
 
         [Serializable]
