@@ -31,10 +31,10 @@ namespace Code.LSW.Code.UI
             nameText.text = nationalData.NationalName;
             // _image = nationalData.;     도시 그림
             
-            infectivityText.text = nationalData.Infectivity.ToString("Infectivity : 0.##");
-            spreadTimeText.text = nationalData.SpreadTime.ToString("SpreadTime : 0.##") + "초";
-            populationDensityText.text = nationalData.PopulationDensity.ToString("Stealth : 0.##");
-            stealthText.text = (nationalData.Stealth * 100).ToString("TotalPeople : 0.##") + "%";
+            infectivityText.text = nationalData.Infectivity.ToString("전파율 : 0.##");
+            spreadTimeText.text = nationalData.SpreadTime.ToString("확산 시간 : 0.##") + "초";
+            populationDensityText.text = nationalData.PopulationDensity.ToString("인구 밀집도 : 0.##");
+            stealthText.text = (nationalData.Stealth * 100).ToString("은밀성 : 0.##") + "%";
             
             // _nationProliferationSlider.value = nationalData.NationProliferation;
         }
