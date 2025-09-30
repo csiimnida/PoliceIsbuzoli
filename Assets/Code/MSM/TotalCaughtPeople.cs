@@ -6,6 +6,7 @@ namespace Code.MSM
 {
     public class TotalCaughtPeople : MonoSingleton<TotalCaughtPeople>
     {
+        [Range(0, 50990000)]
         public int TotalCaughtPeopleValue { get; private set; } = 0;
 
         private void Start()

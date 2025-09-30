@@ -11,6 +11,8 @@ namespace Code.LSW.Code.UI
         [Header("State")]
         [Tooltip("0과 1 사이의 비율")]
         [SerializeField, Range(0f, 1f)] private float currentRate = 0f;
+        [Tooltip("전체 인구")]
+        public int totalPeople = 50990000;
 
         [Header("Optional UI References")] 
         [SerializeField] private Image fillImage;
@@ -30,7 +32,13 @@ namespace Code.LSW.Code.UI
         
         public void Update()
         {
-            float rate = TotalCaughtPeople.Instance.TotalCaughtPeopleValue / 50990000;
+            int caught = TotalCaughtPeople.Instance.TotalCaughtPeopleValue;
+            float rate = 0f;
+            if (totalPeople > 0)
+            {
+                rate = (float)caught / (float)totalPeople;
+            }
+
             currentRate = Mathf.Clamp01(rate);
             Apply(currentRate);
         }
