@@ -1240,7 +1240,7 @@ MonoBehaviour:
   quitBt: {fileID: 300475595}
   startBt: {fileID: 1440913599}
   nextScreenName: EventUI
-  titleSound: TitleBGM
+  titleSound: LSW
   btnClickSound: ButtonClick
 --- !u!1 &1228877830
 GameObject:
