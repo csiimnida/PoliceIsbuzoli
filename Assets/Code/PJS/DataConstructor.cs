@@ -8,6 +8,7 @@ using CSI._01_Script.System;
 public class DataConstructor : MonoSingleton<DataConstructor>
 {
     private const string fileName = "Stat.txt";
+    
     public Dictionary<Type, Dictionary<string, object>> dataTypeDict = new();
     StreamReader reader;
     StreamWriter writer;

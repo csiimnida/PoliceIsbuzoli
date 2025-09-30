@@ -32,6 +32,7 @@ namespace Code.LSW.Code.UI
 
         private void Apply(float rate)
         {
+            
             if (fillImage)
             {
                 fillImage.fillAmount = rate;
