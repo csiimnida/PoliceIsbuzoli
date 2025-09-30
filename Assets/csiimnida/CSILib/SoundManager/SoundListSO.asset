@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 328ca10e1e81bc64daf71ea15a50ccb7, type: 3}
   m_Name: SoundListSO
   m_EditorClassIdentifier: 
-  Sounds: []
+  Sounds:
+  - {fileID: 11400000, guid: c9984ac10c9d72645a163adffd7b4363, type: 2}
+  - {fileID: 11400000, guid: 17190c0b88ec43f49b9b395d229c0acd, type: 2}
+  - {fileID: 11400000, guid: 281e2b2eca600c645a333ddc4c67d342, type: 2}
+  - {fileID: 11400000, guid: 020b5c5d3d9f9374e932daab25ad4e8a, type: 2}
+  - {fileID: 11400000, guid: da4789410036bd74bb6a795044739253, type: 2}
+  - {fileID: 11400000, guid: c928b3ca4408f24458991836fbd9ff46, type: 2}

@@ -31,8 +31,9 @@ namespace CSI._01_Script.System
             }
         }
 
-        private void OnDestroy()
+        private async void OnDestroy()
         {
+            await Awaitable.WaitForSecondsAsync(0.2f);
             IsDestroyed = true;
         }
     }

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +24,7 @@ namespace Code.LSW.Code.UI
         [Header("Events")]
         [SerializeField] private UnityEvent onAppeared = new UnityEvent();
         [SerializeField] private UnityEvent onDisappeared = new UnityEvent();
-
+        
         private Coroutine _fadeRoutine;
         private bool _isVisible;
 
@@ -74,6 +75,7 @@ namespace Code.LSW.Code.UI
         
         public void SetVisible(bool visible)
         {
+            UIManager.Instance.PlayButtonClick();
             if (_isVisible == visible && _fadeRoutine == null)
                 return;
 

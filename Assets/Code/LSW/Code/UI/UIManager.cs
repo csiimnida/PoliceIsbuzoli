@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Code.LSW.Code.So;
 using CSI._01_Script.System;
 using CSI._01_Script.UI;
+using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 
 namespace Code.LSW.Code.UI
@@ -11,8 +12,13 @@ namespace Code.LSW.Code.UI
     {
         [SerializeField] private UpgradeNodeInfoUI nodeInfoUI;
         [SerializeField] private List<EventDataClass> eventDatas = new List<EventDataClass>();
+        [SerializeField] private GameObject gameOverUI;
+        [SerializeField] private GameObject gameClearUI;
         
+        [Header("Sound")]
         public string startEventName = "Start";
+        public string inGameBGM = "InGameBGM";
+        public string btnClickSound = "ButtonClick";
         
         private void Awake()
         {
@@ -22,12 +28,25 @@ namespace Code.LSW.Code.UI
         private void Start()
         {
             SetEventUI(startEventName);
+            SoundManager.Instance.PlaySound(inGameBGM);
         }
+        
+        public void PlayButtonClick() =>
+            SoundManager.Instance.PlaySound(btnClickSound);
 
         public void ShowNodeUI(Vector2 mousePos, string key, float cost)
         {
             nodeInfoUI.gameObject.SetActive(true);
             nodeInfoUI.Show(mousePos, key, cost);
+        }
+        
+        public void ShowGameEndUI(bool isWins)
+        {
+            Time.timeScale = 0f;
+            if (isWins)
+                gameClearUI.SetActive(true);
+            else
+                gameOverUI.SetActive(true);
         }
         
         public void HideNodeUI()
