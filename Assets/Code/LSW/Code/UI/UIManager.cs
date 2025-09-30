@@ -4,6 +4,7 @@ using Code.LSW.Code.So;
 using CSI._01_Script.System;
 using CSI._01_Script.UI;
 using csiimnida.CSILib.SoundManager.RunTime;
+using TMPro;
 using UnityEngine;
 
 namespace Code.LSW.Code.UI
@@ -14,6 +15,7 @@ namespace Code.LSW.Code.UI
         [SerializeField] private List<EventDataClass> eventDatas = new List<EventDataClass>();
         [SerializeField] private GameObject gameOverUI;
         [SerializeField] private GameObject gameClearUI;
+        [SerializeField] private TextMeshProUGUI coinsUI;
         
         [Header("Sound")]
         public string startEventName = "Start";
@@ -33,6 +35,11 @@ namespace Code.LSW.Code.UI
         
         public void PlayButtonClick() =>
             SoundManager.Instance.PlaySound(btnClickSound);
+
+        private void Update()
+        {
+            coinsUI.text = $"Coins : {CurrencyGetter.Instance.Money}";
+        }
 
         public void ShowNodeUI(Vector2 mousePos, string key, float cost)
         {
