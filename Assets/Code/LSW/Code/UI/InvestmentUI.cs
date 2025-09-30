@@ -11,6 +11,7 @@ namespace Code.LSW.Code.UI
         
         public void OnClick(InvestmentUIType type)
         {
+            UIManager.Instance.PlayButtonClick();
             switch (type)
             {
                 case InvestmentUIType.Reach:

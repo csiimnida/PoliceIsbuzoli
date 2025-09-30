@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using Code.LSW.Code.UI;
+using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -22,6 +23,7 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     private bool _activated = false;
     public bool Activated { get { return _activated; } }
+    public string completeUnlockSound = "CompleteUnlock";
 
     private void Awake()
     {
@@ -45,6 +47,7 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     public void TryActiveNode()
     {
         bool requestNodeActive = true;
+        SoundManager.Instance.PlaySound(completeUnlockSound);
         foreach (UpgradeNode node in RequestNode)
         {
             if (node.Activated == false)

@@ -1,5 +1,6 @@
 ﻿using System;
 using CSI._01_Script.System;
+using csiimnida.CSILib.SoundManager.RunTime;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -25,9 +26,10 @@ namespace CSI._01_Script.UI
         [SerializeField] private Ease easeOut = Ease.InBack;
         [SerializeField] private float startScale = 0.9f;
 
+        public string eventAppearSFX = "EventAppear";
         private Tween _inTween;
         private Tween _outTween;
-
+        
          private void Awake()
         {
             EnsureCanvasGroup();
@@ -147,6 +149,7 @@ namespace CSI._01_Script.UI
             text?.SetText(textText);
             if (this.image != null) this.image.sprite = image;
             Time.timeScale = 0;
+            SoundManager.Instance.PlaySound(eventAppearSFX);
             // Reset listeners to avoid stacking
             okBt.onClick.RemoveAllListeners();
             okBt.onClick.AddListener(() =>

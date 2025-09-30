@@ -23,6 +23,7 @@ namespace Code.MSM
 
         private void OnDestroy()
         {
+            if(NationalManager.Instance == null) return;
             NationalManager.Instance.TotalCaughtChangeEvent -= SetTotalCaughtPeople;
         }
 

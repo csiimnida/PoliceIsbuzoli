@@ -1,4 +1,5 @@
 
+using csiimnida.CSILib.SoundManager.RunTime;
 using NUnit.Framework.Internal.Commands;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -11,14 +12,23 @@ namespace CSI._01_Script.UI
     {
         [SerializeField]private Button quitBt, startBt;
         [SerializeField] private string nextScreenName;
+        public string titleSound = "TitleBGM";
+        public string btnClickSound = "ButtonClick";
+        
         private void Awake()
         {
             quitBt.onClick.AddListener(Quit);   
             startBt.onClick.AddListener(ChangeScreen);   
         }
 
+        private void Start()
+        {
+            SoundManager.Instance.PlaySound(titleSound);
+        }
+
         private void Quit()
         {
+            SoundManager.Instance.PlaySound(btnClickSound);
             Application.Quit();
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
@@ -33,6 +43,7 @@ namespace CSI._01_Script.UI
 
         private void ChangeScreen()
         {
+            SoundManager.Instance.PlaySound(btnClickSound);
             SceneManager.LoadScene(nextScreenName);
         }
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -53,6 +54,8 @@ namespace CSI._01_Script.UI
 
         [Tooltip("어떠한 국가도 선택되지 않았을 때 호출")]
         public UnityEvent onNoNation;
+
+        public string selectCity = "SelectCity";
 
         private void Reset()
         {
@@ -110,6 +113,7 @@ namespace CSI._01_Script.UI
             {
                 Debug.Log(entry.nationId);
                 onNationSelected?.Invoke(entry.nationId);
+                SoundManager.Instance.PlaySound(selectCity);
                 if (entry.payload != null)
                     onNationPayloadSelected?.Invoke(entry.payload);
                 return true;

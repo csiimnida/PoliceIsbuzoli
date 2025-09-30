@@ -52,7 +52,7 @@ Material:
     - _DecalMeshDepthBias: 0
     - _DecalMeshViewBias: 0
     - _DrawOrder: 0
-    - _Impers: 0.1444918
+    - _Impers: 0.14447378
     - _Impersss: 1
     - _QueueControl: 0
     - _QueueOffset: 50
