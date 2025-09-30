@@ -147,5 +147,23 @@ namespace Code.LSW.Code.UI
             settingsUI.interactable = value;
             settingsUI.blocksRaycasts = value;
         }
+
+        // ========================
+        // Slider Event Handlers (0~1)
+        // ========================
+        public void OnMasterVolumeChanged(float value)
+        {
+            SoundManager.Instance?.SetMasterVolume(value);
+        }
+
+        public void OnBGMVolumeChanged(float value)
+        {
+            SoundManager.Instance?.SetBGMVolume(value);
+        }
+
+        public void OnSFXVolumeChanged(float value)
+        {
+            SoundManager.Instance?.SetSFXVolume(value);
+        }
     }
 }
