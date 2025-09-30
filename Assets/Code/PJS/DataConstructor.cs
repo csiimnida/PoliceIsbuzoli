@@ -15,13 +15,13 @@ public class DataConstructor : MonoSingleton<DataConstructor>
     private void Awake()
     {
         SceneManager.sceneLoaded += HandleLoad;
-        SceneManager.sceneUnloaded += HandleSave;
+        //SceneManager.sceneUnloaded += HandleSave;
     }
 
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= HandleLoad;
-        SceneManager.sceneUnloaded -= HandleSave;
+        //SceneManager.sceneUnloaded -= HandleSave;
     }
 
     [ContextMenu("saveTest")]
