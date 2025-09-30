@@ -33,14 +33,6 @@ namespace Code.MSM
             }
         }
 
-        private void OnDestroy()
-        {
-            foreach (var nationalDictionaryValue in _nationalDictionary.Values)
-            {
-                nationalDictionaryValue.CaughtPeopleEvent -= TotalCaughtChange;
-            }
-        }
-
         private void TotalCaughtChange()
         {
             int total = 0;
