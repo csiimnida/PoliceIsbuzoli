@@ -1128,18 +1128,18 @@ PrefabInstance:
     - target: {fileID: 154143652419342672, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 842219723}
     - target: {fileID: 154143652419342672, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 154143652419342672, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetMasterVolume01
+      value: OnMasterVolumeChanged
       objectReference: {fileID: 0}
     - target: {fileID: 154143652419342672, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: csiimnida.CSILib.SoundManager.RunTime.SoundManager, SoundManager.runtime
+      value: Code.LSW.Code.UI.SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 154143652419342672, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2228,18 +2228,18 @@ PrefabInstance:
     - target: {fileID: 4971256865195294341, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 842219723}
     - target: {fileID: 4971256865195294341, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4971256865195294341, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetSFXVolume01
+      value: OnSFXVolumeChanged
       objectReference: {fileID: 0}
     - target: {fileID: 4971256865195294341, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: csiimnida.CSILib.SoundManager.RunTime.SoundManager, SoundManager.runtime
+      value: Code.LSW.Code.UI.SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 4971256865195294341, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2408,18 +2408,18 @@ PrefabInstance:
     - target: {fileID: 6265306751646024605, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 842219723}
     - target: {fileID: 6265306751646024605, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6265306751646024605, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetBGMVolume01
+      value: OnBGMVolumeChanged
       objectReference: {fileID: 0}
     - target: {fileID: 6265306751646024605, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: csiimnida.CSILib.SoundManager.RunTime.SoundManager, SoundManager.runtime
+      value: Code.LSW.Code.UI.SettingsUI, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6265306751646024605, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -2985,6 +2985,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7127035554939974035, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
   m_PrefabInstance: {fileID: 842219719}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &842219723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6895625521375603231, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
+  m_PrefabInstance: {fileID: 842219719}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c83cebd5eba4d588c4eb60d5dabd238, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &916244161 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7714411839923993887, guid: 4883f4dca364ec14ba675d4bff26f016, type: 3}
