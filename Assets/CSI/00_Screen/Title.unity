@@ -1239,8 +1239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quitBt: {fileID: 300475595}
   startBt: {fileID: 1440913599}
-  nextScreenName: EventUI
-  titleSound: LSW
+  nextScreenName: LSW
+  titleSound: TitleBGM
   btnClickSound: ButtonClick
 --- !u!1 &1228877830
 GameObject:
