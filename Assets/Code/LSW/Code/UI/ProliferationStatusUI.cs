@@ -48,6 +48,9 @@ namespace Code.LSW.Code.UI
             }
             
             spreadMaterial.SetFloat(impulse, rate);
+            
+            if(Mathf.Approximately(rate, 1f))  
+                UIManager.Instance.ShowGameEndUI(false);
         }
     }
 }

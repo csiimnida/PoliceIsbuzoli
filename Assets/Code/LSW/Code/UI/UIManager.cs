@@ -12,6 +12,8 @@ namespace Code.LSW.Code.UI
     {
         [SerializeField] private UpgradeNodeInfoUI nodeInfoUI;
         [SerializeField] private List<EventDataClass> eventDatas = new List<EventDataClass>();
+        [SerializeField] private GameObject gameOverUI;
+        [SerializeField] private GameObject gameClearUI;
         
         [Header("Sound")]
         public string startEventName = "Start";
@@ -36,6 +38,15 @@ namespace Code.LSW.Code.UI
         {
             nodeInfoUI.gameObject.SetActive(true);
             nodeInfoUI.Show(mousePos, key, cost);
+        }
+        
+        public void ShowGameEndUI(bool isWins)
+        {
+            Time.timeScale = 0f;
+            if (isWins)
+                gameClearUI.SetActive(true);
+            else
+                gameOverUI.SetActive(true);
         }
         
         public void HideNodeUI()
