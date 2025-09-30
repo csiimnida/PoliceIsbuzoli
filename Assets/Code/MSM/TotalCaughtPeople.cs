@@ -31,8 +31,8 @@ namespace Code.MSM
         {
             TotalCaughtPeopleValue = value;
             
-            float rate = 0f;
-            if (totalPeople > 0)
+            float rate = 0.001f;
+            if (TotalCaughtPeopleValue > 0)
             {
                 rate = (float)TotalCaughtPeopleValue / (float)totalPeople;
             }

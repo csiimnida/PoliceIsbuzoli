@@ -20,9 +20,9 @@ namespace Code.MSM
         
         public event Action CaughtPeopleEvent;
 
-        public float PopulationDensity => _populationDensity * _populationDensity;
+        public float PopulationDensity => (_populationDensity * _populationDensity * 10);
         
-        private int _infectedPeople;
+        private int _infectedPeople = 294117;
         
         private int _totalPeople;
         
@@ -63,7 +63,7 @@ namespace Code.MSM
 
                 int caughtPeople = (int)((newlyInfected * (finedPeople)) + Mathf.Ceil((_totalPeople - _totalCaughtPeople) / 2f * finedPeople)); //들킨 사람 수
                 
-                _totalCaughtPeople += caughtPeople;
+                _totalCaughtPeople = _infectedPeople;
                 
                 CaughtPeopleEvent?.Invoke();
             }

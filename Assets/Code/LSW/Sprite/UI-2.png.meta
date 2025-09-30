@@ -11438,10 +11438,10 @@ TextureImporter:
       name: UI-2_405
       rect:
         serializedVersion: 2
-        x: 924
-        y: 1416
-        width: 96
-        height: 85
+        x: 931
+        y: 1423
+        width: 82
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

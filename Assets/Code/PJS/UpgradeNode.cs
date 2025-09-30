@@ -12,7 +12,8 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 {
     [SerializeField] private UpgradeNode[] RequestNode;
     [SerializeField] private UpgradeNode[] NextNode;
-
+    [SerializeField] private Image icon;
+    
     [SerializeField] private float coast;
 
     [SerializeField] private List<StatValuePair> settings = new List<StatValuePair>();
@@ -46,6 +47,9 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void TryActiveNode()
     {
+        if(_activated)
+            return;
+        
         bool requestNodeActive = true;
         SoundManager.Instance.PlaySound(completeUnlockSound);
         foreach (UpgradeNode node in RequestNode)
@@ -53,18 +57,20 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             if (node.Activated == false)
             {
                 requestNodeActive = false;
-                break;
+                return;
             }
         }
-
         if(CurrencyGetter.Instance.UseMoney(coast) == false)
         {
             requestNodeActive = false;
         }
-
+Debug.Log(requestNodeActive);
         if (requestNodeActive)
         {
-            ApplySettings(GetTargetData(targetType));
+            ApplySettings();
+            Color color = icon.color;
+            color.a = 0.5f;
+            icon.color = color;
             _activated = true;
         }
     }
@@ -83,56 +89,15 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         return result as ISerializabelDatas;
     }
 
-    private void ApplySettings(ISerializabelDatas target)
+    private void ApplySettings()
     {
-        Type dataType = target.GetType();
 
         foreach (var setting in settings)
         {
-            FieldInfo field = dataType.GetField(setting.fieldName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
-            object convertedValue = setting.value;
-            if (field == null)
-            {
-                // Debug.LogWarning($"Field {setting.fieldName} not found in {dataType.Name}.");
-                // continue;
-            }
-            else
-            {
-                try
-                {
-                    convertedValue = Convert.ChangeType(setting.value, field.FieldType);
-                }
-                catch
-                {
-                    
-                }
-            }
-
-            if (field != null && field.FieldType == typeof(float))
-            {
-                float val = (float)convertedValue;
-                NationalManager.Instance.Upgrade(setting.type, val, setting.fieldName);
-            }
-            else if (field != null && field.FieldType == typeof(int))
-            {
-                int val = (int)convertedValue;
-                NationalManager.Instance.Upgrade(setting.type, val);
-            }
-            else
-            {
-                // non-numeric: only SET
-                float val = 0;
-                try
-                {
-                    val = (float)Convert.ChangeType(setting.value, typeof(float));
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError("what is this???");
-                    continue;
-                }
-                NationalManager.Instance.Upgrade(setting.type, val, setting.fieldName);
-            }
+            float val;
+            val = (float)Convert.ChangeType(setting.value, typeof(float));
+                
+            NationalManager.Instance.Upgrade(setting.type, val, setting.fieldName);
         }
     }
 
