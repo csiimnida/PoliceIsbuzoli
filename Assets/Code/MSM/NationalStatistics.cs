@@ -61,7 +61,7 @@ namespace Code.MSM
 
                 float finedPeople = 1f - _stealth;//들킨 사람 비율
 
-                int caughtPeople = (int)((newlyInfected * (finedPeople)) + (float)(_totalPeople - _totalCaughtPeople) / 5 * finedPeople); //들킨 사람 수
+                int caughtPeople = (int)((newlyInfected * (finedPeople)) + Mathf.Ceil((_totalPeople - _totalCaughtPeople) / 2f * finedPeople)); //들킨 사람 수
                 
                 _totalCaughtPeople += caughtPeople;
                 

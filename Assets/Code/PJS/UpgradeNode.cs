@@ -87,42 +87,48 @@ public class UpgradeNode : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         foreach (var setting in settings)
         {
             FieldInfo field = dataType.GetField(setting.fieldName, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+            object convertedValue = setting.value;
             if (field == null)
             {
-                Debug.LogWarning($"Field {setting.fieldName} not found in {dataType.Name}.");
-                continue;
+                // Debug.LogWarning($"Field {setting.fieldName} not found in {dataType.Name}.");
+                // continue;
+            }
+            else
+            {
+                try
+                {
+                    convertedValue = Convert.ChangeType(setting.value, field.FieldType);
+                }
+                catch
+                {
+                    
+                }
             }
 
-            object convertedValue;
-            try
+            if (field != null && field.FieldType == typeof(float))
             {
-                convertedValue = Convert.ChangeType(setting.value, field.FieldType);
-            }
-            catch
-            {
-                Debug.LogWarning($"Cannot convert {setting.value} to {field.FieldType}");
-                continue;
-            }
-
-            object currentValue = field.GetValue(target);
-
-            object newValue = convertedValue;
-            if (field.FieldType == typeof(float))
-            {
-                float cur = (float)currentValue;
                 float val = (float)convertedValue;
                 NationalManager.Instance.Upgrade(setting.type, val, setting.fieldName);
             }
-            else if (field.FieldType == typeof(int))
+            else if (field != null && field.FieldType == typeof(int))
             {
-                int cur = (int)currentValue;
                 int val = (int)convertedValue;
                 NationalManager.Instance.Upgrade(setting.type, val);
             }
             else
             {
                 // non-numeric: only SET
-                newValue = convertedValue;
+                float val = 0;
+                try
+                {
+                    val = (float)Convert.ChangeType(setting.value, typeof(float));
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError("what is this???");
+                    continue;
+                }
+                NationalManager.Instance.Upgrade(setting.type, val, setting.fieldName);
             }
         }
     }
