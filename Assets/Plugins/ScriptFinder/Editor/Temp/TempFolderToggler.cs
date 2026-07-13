@@ -31,7 +31,7 @@ namespace MoonLib.ScriptFinder.Editor.Temp
 
         private static void InvalidateCache() => _cachedPackageRoot = null;
 
-        [MenuItem("ScriptFinder/Temp Folder Toggler")]
+        [MenuItem("Tools/ScriptFinder/Temp Folder Toggler")]
         private static void OpenWindow()
         {
             GetWindow<TempFolderToggler>("Temp Folder");

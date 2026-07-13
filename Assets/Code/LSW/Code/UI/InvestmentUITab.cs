@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Code.LSW.Code.So;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -15,7 +14,8 @@ namespace Code.LSW.Code.UI
         [SerializeField, Min(0)] private int startingPoints = 0;
         [SerializeField, Min(0)] private int currentPoints = 0;
 
-        [Header("Visuals (Optional)")]
+        [Header("Visuals (Optional)")] 
+        public string pointsMeaning = "Points";
         [SerializeField] private Color lockedColor = new Color(0.35f, 0.35f, 0.35f, 1f);
         [SerializeField] private Color availableColor = new Color(1f, 0.9f, 0.3f, 1f);
         [SerializeField] private Color unlockedColor = new Color(0.3f, 1f, 0.4f, 1f);
@@ -26,7 +26,6 @@ namespace Code.LSW.Code.UI
 
         [Header("Events")]
         [SerializeField] private UnityEvent<int> onPointsChanged = new UnityEvent<int>();
-        // 이벤트나 다른 걸로도 스킬트리가 열리면
         [SerializeField] private UnityEvent<Node> onNodeUnlocked = new UnityEvent<Node>();
 
         [Serializable]
@@ -51,9 +50,6 @@ namespace Code.LSW.Code.UI
             public Image background;
             public TextMeshProUGUI costText;
             public List<Image> linkLines;
-
-            [Header("Effect")]
-            public InvestmentEffect effect;
             
             public void SetUnlocked(bool value)
             {
@@ -122,13 +118,17 @@ namespace Code.LSW.Code.UI
 
         public bool CanUnlock(string nodeId)
         {
-            if (!_nodeById.TryGetValue(nodeId, out var n)) return false;
-            if (n.Unlocked) return false;
-            if (n.cost > currentPoints) return false;
+            if (!_nodeById.TryGetValue(nodeId, out var n)) 
+                return false;
+            if (n.Unlocked || n.cost > currentPoints) 
+                return false;
+            
             foreach (var pre in n.prerequisites)
             {
-                if (string.IsNullOrEmpty(pre)) continue;
-                if (!_nodeById.TryGetValue(pre, out var p) || !p.Unlocked) return false;
+                if (string.IsNullOrEmpty(pre)) 
+                    continue;
+                if (!_nodeById.TryGetValue(pre, out var p) || !p.Unlocked) 
+                    return false;
             }
             return true;
         }
@@ -196,7 +196,8 @@ namespace Code.LSW.Code.UI
                 bool parentsUnlocked = true;
                 foreach (var pre in node.prerequisites)
                 {
-                    if (string.IsNullOrEmpty(pre)) continue;
+                    if (string.IsNullOrEmpty(pre)) 
+                        continue;
                     if (!_nodeById.TryGetValue(pre, out var p) || !p.Unlocked) { parentsUnlocked = false; break; }
                 }
                 var lineColor = parentsUnlocked ? unlockedColor : lockedColor;
@@ -211,13 +212,14 @@ namespace Code.LSW.Code.UI
         {
             if (pointsText)
             {
-                pointsText.text = currentPoints.ToString();
+                pointsText.text = pointsMeaning + currentPoints.ToString();
             }
         }
 
         public void ForceUnlock(string nodeId, bool refresh = true)
         {
-            if (!_nodeById.TryGetValue(nodeId, out var n)) return;
+            if (!_nodeById.TryGetValue(nodeId, out var n)) 
+                return;
             if (!n.Unlocked)
             {
                 n.SetUnlocked(true);

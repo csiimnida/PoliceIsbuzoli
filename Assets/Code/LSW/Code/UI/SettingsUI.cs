@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using csiimnida.CSILib.SoundManager.RunTime;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,7 +24,7 @@ namespace Code.LSW.Code.UI
         [Header("Events")]
         [SerializeField] private UnityEvent onAppeared = new UnityEvent();
         [SerializeField] private UnityEvent onDisappeared = new UnityEvent();
-
+        
         private Coroutine _fadeRoutine;
         private bool _isVisible;
 
@@ -74,6 +75,7 @@ namespace Code.LSW.Code.UI
         
         public void SetVisible(bool visible)
         {
+            UIManager.Instance.PlayButtonClick();
             if (_isVisible == visible && _fadeRoutine == null)
                 return;
 
@@ -144,6 +146,24 @@ namespace Code.LSW.Code.UI
         {
             settingsUI.interactable = value;
             settingsUI.blocksRaycasts = value;
+        }
+
+        // ========================
+        // Slider Event Handlers (0~1)
+        // ========================
+        public void OnMasterVolumeChanged(float value)
+        {
+            SoundManager.Instance?.SetMasterVolume(value);
+        }
+
+        public void OnBGMVolumeChanged(float value)
+        {
+            SoundManager.Instance?.SetBGMVolume(value);
+        }
+
+        public void OnSFXVolumeChanged(float value)
+        {
+            SoundManager.Instance?.SetSFXVolume(value);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using csiimnida.CSILib.SoundManager.RunTime;
+using UnityEngine;
 
 namespace Code.LSW.Code.UI
 {
@@ -14,8 +15,11 @@ namespace Code.LSW.Code.UI
     {
         [SerializeField] private InvestmentUI investmentUI;
         public InvestmentUIType type;
-
+        
         public void OnClick()
-            => investmentUI?.OnClick(type);
+        {
+            UIManager.Instance.PlayButtonClick();
+            investmentUI?.OnClick(type);
+        }
     }
 }

@@ -11,13 +11,13 @@ namespace csiimnida.CSILib.SoundManager.RunTime
         [SerializeField] private SoundListSo _soundListSo;
         [SerializeField] private AudioMixer _mixer;
 
-        [Header("Exposed Mixer Parameters")]
-        [Tooltip("AudioMixer exposed parameter name for Master volume (in dB)")]
-        [SerializeField] private string masterVolumeParam = "MasterVolume";
-        [Tooltip("AudioMixer exposed parameter name for BGM volume (in dB)")]
-        [SerializeField] private string bgmVolumeParam = "BGMVolume";
-        [Tooltip("AudioMixer exposed parameter name for SFX volume (in dB)")]
-        [SerializeField] private string sfxVolumeParam = "SFXVolume";
+        [Header("AudioMixer Exposed Parameters")]
+        [Tooltip("AudioMixer의 Exposed Parameter 이름 (Master)")]
+        [SerializeField] private string _masterVolumeParam = "MasterVolume";
+        [Tooltip("AudioMixer의 Exposed Parameter 이름 (BGM)")]
+        [SerializeField] private string _bgmVolumeParam = "BGMVolume";
+        [Tooltip("AudioMixer의 Exposed Parameter 이름 (SFX)")]
+        [SerializeField] private string _sfxVolumeParam = "SFXVolume";
 
         private void Awake()
         {
@@ -29,6 +29,7 @@ namespace csiimnida.CSILib.SoundManager.RunTime
             {
                 Debug.LogError("AudioMixer가 할당되지 않았습니다. SoundManager를 사용하기 전에 할당해주세요.");
             }
+            DontDestroyOnLoad(gameObject);
         }
 
         public void PlaySound(string soundName)
@@ -53,8 +54,10 @@ namespace csiimnida.CSILib.SoundManager.RunTime
             {
                 Debug.LogWarning("Type이 없습니다");
                 source.outputAudioMixerGroup = _mixer.FindMatchingGroups("Master")[0];
+
             }
             SetAudio(source,so);
+        
         }
 
         private void SetAudio(AudioSource source,SoundSo sounds)
@@ -76,6 +79,7 @@ namespace csiimnida.CSILib.SoundManager.RunTime
             }
             source.Play();
             if (!sounds.loop) { StartCoroutine(DestroyCo(source.clip.length,source.gameObject)); }
+
         }
 
         IEnumerator DestroyCo(float endTime,GameObject obj)
@@ -84,44 +88,59 @@ namespace csiimnida.CSILib.SoundManager.RunTime
             Destroy(obj);
         }
 
-        // === Public Volume Controls (0-1 Linear) ===
-        public void SetMasterVolume01(float value01) => SetVolume01(masterVolumeParam, value01);
-        public void SetBGMVolume01(float value01) => SetVolume01(bgmVolumeParam, value01);
-        public void SetSFXVolume01(float value01) => SetVolume01(sfxVolumeParam, value01);
-
-        public float GetMasterVolume01() => GetVolume01(masterVolumeParam);
-        public float GetBGMVolume01() => GetVolume01(bgmVolumeParam);
-        public float GetSFXVolume01() => GetVolume01(sfxVolumeParam);
-
-        private void SetVolume01(string param, float value01)
+        // ========================
+        // Volume Controls (0~1)
+        // ========================
+        public void SetMasterVolume(float normalized)
         {
-            if (_mixer == null || string.IsNullOrEmpty(param)) return;
-            value01 = Mathf.Clamp01(value01);
-            float db = LinearToDb(value01);
-            _mixer.SetFloat(param, db);
+            SetVolumeInternal(_masterVolumeParam, normalized);
         }
 
-        private float GetVolume01(string param)
+        public void SetBGMVolume(float normalized)
         {
-            if (_mixer == null || string.IsNullOrEmpty(param)) return 1f;
-            if (_mixer.GetFloat(param, out float db))
+            SetVolumeInternal(_bgmVolumeParam, normalized);
+        }
+
+        public void SetSFXVolume(float normalized)
+        {
+            SetVolumeInternal(_sfxVolumeParam, normalized);
+        }
+
+        public void SetVolume(float normalized, SoundType type)
+        {
+            switch (type)
             {
-                return DbToLinear(db);
+                case SoundType.BGM:
+                    SetBGMVolume(normalized);
+                    break;
+                case SoundType.SFX:
+                    SetSFXVolume(normalized);
+                    break;
+                default:
+                    SetMasterVolume(normalized);
+                    break;
             }
-            return 1f;
         }
 
-        private static float LinearToDb(float value01)
+        private void SetVolumeInternal(string paramName, float normalized)
         {
-            // Treat near-zero as mute (-80 dB commonly used)
-            if (value01 <= 0.0001f) return -80f;
-            return Mathf.Log10(value01) * 20f;
-        }
-
-        private static float DbToLinear(float db)
-        {
-            if (db <= -80f) return 0f;
-            return Mathf.Pow(10f, db / 20f);
+            if (_mixer == null)
+            {
+                Debug.LogWarning("AudioMixer가 없어 볼륨을 설정할 수 없습니다.");
+                return;
+            }
+            if (string.IsNullOrEmpty(paramName))
+            {
+                Debug.LogWarning("AudioMixer Exposed Parameter 이름이 비어 있습니다.");
+                return;
+            }
+            normalized = Mathf.Clamp01(normalized);
+            float dB = Mathf.Approximately(normalized, 0f) ? -80f : Mathf.Log10(normalized) * 20f;
+            bool ok = _mixer.SetFloat(paramName, dB);
+            if (!ok)
+            {
+                Debug.LogWarning($"AudioMixer에 '{paramName}' Exposed Parameter가 없습니다. AudioMixer에서 노출하고 같은 이름으로 설정해주세요.");
+            }
         }
     }
 
